@@ -19,51 +19,29 @@
 3. **Kiến trúc ThemeData & Tokens:**  
    - Toàn bộ màu sắc gọi qua `Theme.of(context).colorScheme.<tên_màu>` hoặc hằng số `AppColors.<tên_token>`. Tuyệt đối không hardcode mã Hex phân tán trong widget.
    - Toàn bộ kiểu chữ gọi qua `Theme.of(context).textTheme.<tên_style>`.
-   - Khoảng cách padding/margin gọi qua hằng số `AppSpacing.<tên_token>`.
-   - Bo góc viền gọi qua `AppRadius.<tên_token>`.
-
----
-
-## 1. Bảng Token → Flutter
-
-Bảng đối chiếu toàn diện mọi Design Token từ hệ thống thiết kế sang thuộc tính Flutter:
-
-### 1.1. Color Tokens (Màu sắc)
-| Token Name | Giá trị Hex | Thuộc tính Flutter tương ứng (M3) | Nguồn định nghĩa | Ghi chú & ⚠ Mâu thuẫn nguồn |
+   - Khoảng cách padding/ma| Token Name | Giá trị Hex | Thuộc tính Flutter tương ứng (M3) | Nguồn định nghĩa | Ghi chú & ⚠ Mâu thuẫn nguồn |
 | :--- | :---: | :--- | :--- | :--- |
 | `primary` | `#FF5722` | `ColorScheme.primary` | Figma Variables / DESIGN.md | Cam thương hiệu chính, nút CTA chính |
-
 | `onPrimary` | `#FFFFFF` | `ColorScheme.onPrimary` | DESIGN.md §2.1 | Chữ trắng trên nền cam. ⚠ Tương phản 3.16:1 (cần dùng font chữ lớn/đậm để đạt chuẩn Large Text) |
-
 | `primaryContainer` | `#FBE9E7` | `ColorScheme.primaryContainer` | DESIGN.md §2.1 | Nền chip, pill active Bottom Nav |
-
 | `onPrimaryContainer` | `#E64A19` | `ColorScheme.onPrimaryContainer` | DESIGN.md §2.1 | Icon/Text trên nền Primary Container |
-
 | `secondary` | `#FFA000` | `ColorScheme.secondary` | DESIGN.md §2.1 | Màu phụ hổ phách: Đánh giá sao ⭐, huy hiệu giảm giá |
-
 | `secondaryContainer`| `#FFF8E1` | `ColorScheme.secondaryContainer` | DESIGN.md §2.1 | Nền voucher chip |
-
 | `background` | `#FFFFFF` | `ColorScheme.background` / `surface` | Figma Variables | Nền chuẩn màn hình |
-
 | `surfaceBg` | `#F8F9FA` | `ThemeData.scaffoldBackgroundColor` | DESIGN.md §2.1 | ⚠ Figma Variables chưa có token này, chỉ có `Background #FFFFFF` |
-
 | `surfaceCard` | `#FFFFFF` | `ColorScheme.surface` | DESIGN.md §2.1 | Nền thẻ món ăn, card, dialog |
-
 | `textPrimary` | `#111111` | `ColorScheme.onSurface` | Figma Variables | ⚠ DESIGN.md ghi `#1A1A1A`. Ưu tiên Figma `#111111` (tương phản 18.85:1) |
-
 | `textSecondary` | `#757575` | `ColorScheme.onSurfaceVariant` | Figma Variables | ⚠ DESIGN.md ghi `#5F6368`. Ưu tiên Figma `#757575` (tương phản 4.61:1) |
-
 | `textDisabled` | `#BDBDBD` | `ColorScheme.outlineVariant` | DESIGN.md §2.1 | Chữ nút vô hiệu hóa, món hết hàng |
-
 | `error` | `#F44336` | `ColorScheme.error` | Figma Variables | ⚠ MÂU THUẪN: Variables là `#F44336` (tương phản 3.75:1, chưa đạt AA); DESIGN.md là `#D32F2F` (đạt 6.73:1). Khuyên dùng `#D32F2F` trong Flutter để đạt chuẩn Accessibility |
-
 | `errorContainer` | `#FFEBEE` | `ColorScheme.errorContainer` | DESIGN.md 2.1 | Nền hộp thông báo lỗi, banner khiếu nại |
-
 | `onErrorContainer` | `#D32F2F` | `ColorScheme.onErrorContainer` | DESIGN.md 2.1 | Chữ/Icon lỗi trên nền đỏ nhạt |
-
 | `success` | `#2E7D32` | Hằng số `AppColors.success` | DESIGN.md 2.1 | Trạng thái giao thành công, đối soát hợp lệ |
-
 | `successContainer` | `#E8F5E9` | Hằng số `AppColors.successContainer`| DESIGN.md 2.1 | Nền banner thành công, badge hợp lệ |
+| `warning` | `#ED6C02` | Hằng số `AppColors.warning` | DESIGN.md 2.1 | Cảnh báo Cut-off time, đếm ngược |
+| `warningContainer` | `#FFF3E0` | Hằng số `AppColors.warningContainer`| DESIGN.md 2.1 | Nền banner Cut-off time |
+| `borderDefault` | `#E0E0E0` | `ColorScheme.outline` | DESIGN.md 2.1 | Đường viền ô nhập liệu, divider |
+| `borderFocused` | `#FF5722` | Hằng số `AppColors.borderFocused` | DESIGN.md 2.1 | Viền ô input khi đang nhập liệu |iner`| DESIGN.md 2.1 | Nền banner thành công, badge hợp lệ |
 
 | `warning` | `#ED6C02` | Hằng số `AppColors.warning` | DESIGN.md 2.1 | Cảnh báo Cut-off time, đếm ngược |
 
@@ -78,23 +56,14 @@ Bảng đối chiếu toàn diện mọi Design Token từ hệ thống thiết 
 | Typography Token | Size (sp) | Weight | Line Height | Ánh xạ Flutter `TextTheme` | Mục đích sử dụng |
 | :--- | :---: | :--- | :---: | :--- | :--- |
 | `headline-large` | 28sp | Bold (w700) | 34dp (1.2) | `textTheme.headlineLarge` | Tổng tiền thanh toán lớn (`S4`, `S5`) |
-
 | `headline-medium`| 22sp | Bold (w700) | 28dp (1.27)| `textTheme.headlineMedium` | Tiêu đề App Bar chính, tiêu đề Dialog |
-
 | `title-large` | 18sp | Semi-Bold (w600) | 24dp (1.33)| `textTheme.titleLarge` | Tên quán ăn, tiêu đề section |
-
 | `title-medium` | 16sp | Semi-Bold (w600) | 22dp (1.38)| `textTheme.titleMedium` | Tên món ăn trên card, tên danh mục |
-
 | `body-large` | 16sp | Regular (w400) | 24dp (1.5) | `textTheme.bodyLarge` | Nội dung mô tả chi tiết món ăn |
-
 | `body-medium` | 14sp | Regular (w400) | 20dp (1.43)| `textTheme.bodyMedium` | Nhãn ô nhập liệu, mô tả phụ, đơn giá |
-
 | `body-medium-bold`| 14sp| Semi-Bold (w600) | 20dp (1.43)| `textTheme.bodyMedium.copyWith(fontWeight: FontWeight.w600)` | Đơn giá món, tên tài xế trên thẻ `S6` |
-
 | `label-large` | 15sp | Semi-Bold (w600) | 20dp (1.33)| `textTheme.labelLarge` | Chữ trên nút bấm (Buttons), Tab Bottom Nav |
-
 | `label-small` | 12sp | Medium (w500) | 16dp (1.33)| `textTheme.labelSmall` | Badge giảm giá, chip đếm ngược |
-
 | `caption` | 12sp | Regular (w400) | 16dp (1.33)| `textTheme.bodySmall` | Helper text ô nhập liệu, ghi chú chân trang |
 
 ### 1.3. Spacing Tokens (Khoảng cách & Padding)
@@ -135,22 +104,13 @@ Bảng đối chiếu 9 bộ Master Component từ Figma sang Widget Flutter chu
 | Mã | Tên Component | Tên trong Figma & Node ID | Variant hiện có trên Figma | Variant còn thiếu (⚠ CẦN BỔ SUNG) | Flutter Widget tương ứng | Thuộc tính chính cấu hình trong Flutter |
 | :---: | :--- | :--- | :--- | :--- | :--- | :--- |
 | **C01** | Button | `KTX/Button/Primary` (`111:8`) | `State=Default`, `Disabled` | `State=Pressed`, `Loading`; Biến thể `Type=Secondary`, `Outline`, `Danger` | **`FilledButton`** (chính), `OutlinedButton`, `ElevatedButton` | `style: FilledButton.styleFrom(backgroundColor: ColorScheme.primary, minimumSize: const Size(double.infinity, 48), shape: const StadiumBorder())` |
-
 | **C02** | Text Field | `Crave/Text Field` (`84:25`) | `State=Default`, `Error` | `State=Focused`, `Filled`, `Disabled` | **`TextFormField`** | `decoration: InputDecoration(border: OutlineInputBorder(borderRadius: BorderRadius.circular(8)), contentPadding: const EdgeInsets.symmetric(horizontal: 16, vertical: 14))` |
-
 | **C03** | Food Item Card | `Food Item Card` (`116:43`) | 1 trạng thái mặc định | Thiếu phân nhánh `Layout=Vertical` vs `Horizontal`; Thiếu `State=Available` vs `SoldOut` | **`Card`** hoặc `InkWell` + `Container` | `Card(elevation: 1, shape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(12)), child: ...)` |
-
-| **C04** | Bottom Navigation | `Crave/Bottom Navigation` (`87:152`) | `Active=Home`, `Explore`, `Orders`, `Profile` | Thiếu badge đếm số lượng cho tab Orders | 
-**`NavigationBar`** (M3) | `NavigationBar(selectedIndex: currentIndex, destinations: const [NavigationDestination(icon: Icon(Icons.home), label: 'Trang chủ'), ...])` |
-
+| **C04** | Bottom Navigation | `Crave/Bottom Navigation` (`87:152`) | `Active=Home`, `Explore`, `Orders`, `Profile` | Thiếu badge đếm số lượng cho tab Orders | **`NavigationBar`** (M3) | `NavigationBar(selectedIndex: currentIndex, destinations: const [NavigationDestination(icon: Icon(Icons.home), label: 'Trang chủ'), ...])` |
 | **C05** | App Bar | `Crave/App Bar` (`90:26`) | 1 trạng thái tiêu đề chuẩn | Thiếu biến thể Home Header (kèm Dropdown chọn Cổng KTX), thiếu Header có Action gọi hotline | **`AppBar`** | `AppBar(title: Text(...), centerTitle: true, elevation: 0, leading: IconButton(icon: const Icon(Icons.arrow_back), onPressed: ...))` |
-
 | **C06** | Dialog | `Dialog / Xác nhận giao hàng KTX` (`123:72`) | 1 trạng thái xác nhận giao nhận | ⚠ Thiếu Dialog "Đặt đơn thành công" `S5_Success` (chỉ có ở file phụ 192:2); thiếu Danger Dialog (Hủy đơn) | **`AlertDialog`** / `showModalBottomSheet` | `AlertDialog(shape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(16)), title: ..., content: ..., actions: [FilledButton(...)])` |
-
 | **C07** | Loading State | `KTXFood/Loading State` (`95:19`) | 1 trạng thái spinner toàn trang | Thiếu Shimmer Skeleton cho Card món ăn, thiếu Shimmer danh mục, thiếu Circular Overlay cho S5 | **`CircularProgressIndicator`** & gói `shimmer` | `CircularProgressIndicator(color: ColorScheme.primary)` hoặc `Shimmer.fromColors(baseColor: Colors.grey[300]!, highlightColor: Colors.grey[100]!)` |
-
 | **C08** | Empty State | `Empty State / Giỏ hàng trống` (`131:16`)| 1 trạng thái giỏ hàng rỗng | Thiếu Empty state tìm kiếm không thấy món (`S1`), thiếu Empty state lịch sử trống (`S10`) | Custom **`Column`** Widget | `Column(mainAxisAlignment: MainAxisAlignment.center, children: [Icon(Icons.shopping_bag_outlined, size: 64), Text(...), FilledButton(...)])` |
-
 | **C09** | Error State | `Crave/Error State` (`96:60`) | 1 trạng thái toàn màn hình mất mạng | Thiếu Inline Error Banner cho Form `S8`, thiếu Banner hết hạn Cut-off time ở `S1`/`S4` | Custom **`Container`** / `Card` Inline Alert | `Container(padding: const EdgeInsets.all(12), decoration: BoxDecoration(color: ColorScheme.errorContainer, borderRadius: BorderRadius.circular(8)), child: ...)` |
 
 ---
