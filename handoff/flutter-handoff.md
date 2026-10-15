@@ -19,7 +19,16 @@
 3. **Kiến trúc ThemeData & Tokens:**  
    - Toàn bộ màu sắc gọi qua `Theme.of(context).colorScheme.<tên_màu>` hoặc hằng số `AppColors.<tên_token>`. Tuyệt đối không hardcode mã Hex phân tán trong widget.
    - Toàn bộ kiểu chữ gọi qua `Theme.of(context).textTheme.<tên_style>`.
-   - Khoảng cách padding/ma| Token Name | Giá trị Hex | Thuộc tính Flutter tương ứng (M3) | Nguồn định nghĩa | Ghi chú & ⚠ Mâu thuẫn nguồn |
+   - Khoảng cách padding/margin gọi qua hằng số `AppSpacing.<tên_token>`.
+   - Bán kính bo góc gọi qua hằng số `AppRadius.<tên_token>` hoặc `BorderRadius.circular(...)`.
+
+---
+
+## 1. Bản đồ Tokens sang Flutter (Design Token Mapping)
+
+### 1.1. Color Tokens (Màu sắc)
+
+| Token Name | Giá trị Hex | Thuộc tính Flutter tương ứng (M3) | Nguồn định nghĩa | Ghi chú & ⚠ Mâu thuẫn nguồn |
 | :--- | :---: | :--- | :--- | :--- |
 | `primary` | `#FF5722` | `ColorScheme.primary` | Figma Variables / DESIGN.md | Cam thương hiệu chính, nút CTA chính |
 | `onPrimary` | `#FFFFFF` | `ColorScheme.onPrimary` | DESIGN.md §2.1 | Chữ trắng trên nền cam. ⚠ Tương phản 3.16:1 (cần dùng font chữ lớn/đậm để đạt chuẩn Large Text) |
@@ -34,22 +43,14 @@
 | `textSecondary` | `#757575` | `ColorScheme.onSurfaceVariant` | Figma Variables | ⚠ DESIGN.md ghi `#5F6368`. Ưu tiên Figma `#757575` (tương phản 4.61:1) |
 | `textDisabled` | `#BDBDBD` | `ColorScheme.outlineVariant` | DESIGN.md §2.1 | Chữ nút vô hiệu hóa, món hết hàng |
 | `error` | `#F44336` | `ColorScheme.error` | Figma Variables | ⚠ MÂU THUẪN: Variables là `#F44336` (tương phản 3.75:1, chưa đạt AA); DESIGN.md là `#D32F2F` (đạt 6.73:1). Khuyên dùng `#D32F2F` trong Flutter để đạt chuẩn Accessibility |
-| `errorContainer` | `#FFEBEE` | `ColorScheme.errorContainer` | DESIGN.md 2.1 | Nền hộp thông báo lỗi, banner khiếu nại |
-| `onErrorContainer` | `#D32F2F` | `ColorScheme.onErrorContainer` | DESIGN.md 2.1 | Chữ/Icon lỗi trên nền đỏ nhạt |
-| `success` | `#2E7D32` | Hằng số `AppColors.success` | DESIGN.md 2.1 | Trạng thái giao thành công, đối soát hợp lệ |
-| `successContainer` | `#E8F5E9` | Hằng số `AppColors.successContainer`| DESIGN.md 2.1 | Nền banner thành công, badge hợp lệ |
-| `warning` | `#ED6C02` | Hằng số `AppColors.warning` | DESIGN.md 2.1 | Cảnh báo Cut-off time, đếm ngược |
-| `warningContainer` | `#FFF3E0` | Hằng số `AppColors.warningContainer`| DESIGN.md 2.1 | Nền banner Cut-off time |
-| `borderDefault` | `#E0E0E0` | `ColorScheme.outline` | DESIGN.md 2.1 | Đường viền ô nhập liệu, divider |
-| `borderFocused` | `#FF5722` | Hằng số `AppColors.borderFocused` | DESIGN.md 2.1 | Viền ô input khi đang nhập liệu |iner`| DESIGN.md 2.1 | Nền banner thành công, badge hợp lệ |
-
-| `warning` | `#ED6C02` | Hằng số `AppColors.warning` | DESIGN.md 2.1 | Cảnh báo Cut-off time, đếm ngược |
-
-| `warningContainer` | `#FFF3E0` | Hằng số `AppColors.warningContainer`| DESIGN.md 2.1 | Nền banner Cut-off time |
-
-| `borderDefault` | `#E0E0E0` | `ColorScheme.outline` | DESIGN.md 2.1 | Đường viền ô nhập liệu, divider |
-
-| `borderFocused` | `#FF5722` | Hằng số `AppColors.borderFocused` | DESIGN.md 2.1 | Viền ô input khi đang nhập liệu |
+| `errorContainer` | `#FFEBEE` | `ColorScheme.errorContainer` | DESIGN.md §2.1 | Nền hộp thông báo lỗi, banner khiếu nại |
+| `onErrorContainer` | `#D32F2F` | `ColorScheme.onErrorContainer` | DESIGN.md §2.1 | Chữ/Icon lỗi trên nền đỏ nhạt |
+| `success` | `#2E7D32` | Hằng số `AppColors.success` | DESIGN.md §2.1 | Trạng thái giao thành công, đối soát hợp lệ |
+| `successContainer` | `#E8F5E9` | Hằng số `AppColors.successContainer`| DESIGN.md §2.1 | Nền banner thành công, badge hợp lệ |
+| `warning` | `#ED6C02` | Hằng số `AppColors.warning` | DESIGN.md §2.1 | Cảnh báo Cut-off time, đếm ngược |
+| `warningContainer` | `#FFF3E0` | Hằng số `AppColors.warningContainer`| DESIGN.md §2.1 | Nền banner Cut-off time |
+| `borderDefault` | `#E0E0E0` | `ColorScheme.outline` | DESIGN.md §2.1 | Đường viền ô nhập liệu, divider |
+| `borderFocused` | `#FF5722` | Hằng số `AppColors.borderFocused` | DESIGN.md §2.1 | Viền ô input khi đang nhập liệu |
 
 ### 1.2. Typography Tokens (Kiểu chữ)
 *Font family chuẩn: **Inter** (hoặc **Roboto** có sẵn trong hệ sinh thái Android/Flutter).*
