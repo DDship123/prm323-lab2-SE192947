@@ -22,12 +22,10 @@
 | 1 | `v1_after-2.png` | Bản chốt của 4 màn trên (màn 6 → 8 và Trang chủ cuối luồng). |
 | 1 | `v1_before-3.png` | Bản gốc: sơ đồ User Flow khiếu nại + 2 màn (Lịch sử đơn hàng, Khiếu nại sau giao nhận). |
 | 1 | `v1_after-3.png` | Bản chốt của 2 màn trên (màn 9 → 10). |
-| 2 | `v2_after.png` | Trạng thái **có đơn bình thường** (Lịch sử đơn hàng + Khiếu nại) – dùng làm **bản trước** của Vòng 2. *(Ảnh này trùng nội dung với `v1_after-3.png`.)* |
-| 2 | `v2_before.png` | **Empty State** và **Error State** đặt song song – là **kết quả sau** của Vòng 2. |
+| 2 | `v2_before.png` | Trạng thái **có đơn bình thường** (Lịch sử đơn hàng + Khiếu nại) – **bản trước** của Vòng 2. *(Ảnh này trùng nội dung với `v1_after-3.png`.)* |
+| 2 | `v2_after.png` | **Empty State** và **Error State** đặt song song – **kết quả sau** của Vòng 2. |
 | 3 | `v3_before.png` | Màn Theo dõi đơn & Mã nhận trước khi chuẩn hóa Touch Target và khối QR. |
 | 3 | `v3_after.png` | Màn Theo dõi đơn & Mã nhận sau khi chuẩn hóa Touch Target $\ge 48\text{dp}$ và QR $200\text{dp}$. |
-
-> **Lưu ý về Vòng 2:** Tên file `v2_before.png` / `v2_after.png` đang bị đặt ngược so với nội dung. Báo cáo dưới đây mô tả theo **nội dung thực tế** của từng ảnh để minh chứng không bị sai lệch.
 
 ---
 
@@ -243,21 +241,19 @@ Trạng thái thông báo lỗi (Error State):
 
 | Vai trò | Tên file | Nội dung |
 | :--- | :--- | :--- |
-| Bản trước (ảnh đầu vào đính kèm cho Stitch) | `assests/stitch/Vinh/v2_after.png` | Màn Lịch sử đơn hàng có đơn đang giao + màn Khiếu nại (trạng thái dữ liệu bình thường). |
-| Bản sau (kết quả Vòng 2) | `assests/stitch/Vinh/v2_before.png` | Empty State "Chưa có đơn hàng nào cần nhận" và Error State "Mất kết nối máy chủ" đặt song song. |
-
-> Tên hai file Vòng 2 đang bị đặt ngược với nội dung; bảng trên ghi theo nội dung thực tế của ảnh.
+| Bản trước (ảnh đầu vào đính kèm cho Stitch) | `assests/stitch/Vinh/v2_before.png` | Màn Lịch sử đơn hàng có đơn đang giao + màn Khiếu nại (trạng thái dữ liệu bình thường). |
+| Bản sau (kết quả Vòng 2) | `assests/stitch/Vinh/v2_after.png` | Empty State "Chưa có đơn hàng nào cần nhận" và Error State "Mất kết nối máy chủ" đặt song song. |
 
 * **Bản trước – trạng thái có đơn bình thường:**
-  - ![V2 Trạng thái có đơn (đầu vào)](../../assests/stitch/Vinh/v2_after.png)
+  - ![V2 Before – Trạng thái có đơn](../../assests/stitch/Vinh/v2_before.png)
 * **Bản sau – Empty State & Error State:**
-  - ![V2 Empty State & Error State (kết quả)](../../assests/stitch/Vinh/v2_before.png)
+  - ![V2 After – Empty State & Error State](../../assests/stitch/Vinh/v2_after.png)
 
 ## 2.3. Phản hồi của AI & Chi tiết tối ưu hóa 2 màn hình biên
 
 ### 2.3.1. Trạng Thái Trống (Empty State)
 
-**Màn hình trên Canvas:** 11. Trạng Thái Trống - Chưa Có Đơn Hàng (Empty State) – nửa trái của ảnh `v2_before.png`.
+**Màn hình trên Canvas:** 11. Trạng Thái Trống - Chưa Có Đơn Hàng (Empty State) – nửa trái của ảnh `v2_after.png`.
 
 **Ngữ cảnh:** Sinh viên truy cập tab Lịch sử / Theo dõi đơn nhưng không có đơn hàng nào đang diễn ra hoặc cần nhận trong ca hiện tại.
 
@@ -273,7 +269,7 @@ Trạng thái thông báo lỗi (Error State):
 
 ### 2.3.2. Trạng Thái Thông Báo Lỗi (Error State)
 
-**Màn hình trên Canvas:** 12. Trạng Thái Lỗi - Mất Kết Nối Máy Chủ (Error State) – nửa phải của ảnh `v2_before.png`.
+**Màn hình trên Canvas:** 12. Trạng Thái Lỗi - Mất Kết Nối Máy Chủ (Error State) – nửa phải của ảnh `v2_after.png`.
 
 **Ngữ cảnh:** Mất kết nối mạng (Network Timeout / Offline) hoặc máy chủ gặp sự cố không thể đồng bộ dữ liệu đơn hoặc mã QR đối soát tại bàn nhận cơm.
 
