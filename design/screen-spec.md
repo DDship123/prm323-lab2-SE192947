@@ -16,25 +16,15 @@ Bảng tổng hợp 11 màn hình và dialog nằm trong phạm vi 3 User Flows 
 | Mã | Tên Màn hình (Chuẩn User Flow) | Loại Root / Nested | Thuộc Flow | Node Figma |
 | :--- | :--- | :--- | :--- | :--- |
 | **S1** | `S1_FoodSearchHome` (Tra cứu đặt đồ ăn) | Root Screen (Tab Trang chủ) | Flow 1 (Start), Flow 2 (End) | `4:1539` (File chính, Page Student Screens) |
-
 | **S2** | `S2_StoreDetailMenu` (Chi tiết Quán ăn & Thực đơn) | Nested Screen | Flow 1 (Step) | `3:479` (File chính, Page Student Screens) |
-
 | **S3** | `S3_FoodCustomization` (Tùy biến món ăn) | Nested Screen / Modal Bottom Sheet | Flow 1 (Step) | `8:7296` (File chính, Page Student Screens) |
-
 | **S4** | `S4_GroupCartCheckout` (Giỏ hàng & Thanh toán gom đơn) | Nested Screen | Flow 1 (Step / Alt) | `3:2` (File chính, Page Student Screens) |
-
 | **S5** | `S5_OnlinePayment` (Thanh toán online) | Nested Screen | Flow 1 (Step) | `8:7969` (File chính, Page Student Screens) |
-
 | **S5_Success** | `S5_OrderSuccessDialog` (Dialog Xác nhận Đặt hàng thành công) | Dialog / Pop-up Overlay | Flow 1 (Step phản hồi) | `192:2` (File phụ `ALDYFWUZ...`, Page Prototype) |
-
 | **S6** | `S6_LiveOrderTracking` (Theo dõi Đơn hàng thời gian thực) | Root Screen (Tab Đơn hàng) | Flow 1 (End), Flow 2 (Start), Flow 3 (Khởi phát & End) | `3:700` (File chính, Page Student Screens) |
-
 | **S7** | `S7_PickupQRCode` (Mã QR Nhận hàng tại Cổng KTX) | Nested Screen / Modal Bottom Sheet | Flow 2 (Step / Alt) | `3:284` (File chính, Page Student Screens) |
-
 | **S8** | `S8_DisputeRefund` (Khiếu nại và hoàn tiền) | Nested Screen | Flow 3 (Recovery) | `8:6980` (File chính); Tương tác `85:247`, Gửi xong `192:19` (File phụ) |
-
 | **S9** | `S9_ReviewFeedback` (Đánh giá và phản hồi) | Nested Screen | Flow 2 (End) | `8:6735` (File chính, Page Student Screens) |
-
 | **S10** | `S10_OrderHistory` (Lịch sử đơn hàng) | Root Screen (Tab Lịch sử) | Flow 3 (Khởi phát & End) | `26:2` (File chính, Page Student Screens) |
 
 ---
@@ -298,33 +288,19 @@ Bảng tổng hợp 11 màn hình và dialog nằm trong phạm vi 3 User Flows 
 | Mã Màn hình | Tên Màn hình (Khớp chính xác Figma) | Flow 1 (Đặt món & Thanh toán) | Flow 2 (Nhận hàng tại Cổng) | Flow 3 (Báo lỗi & Hoàn tiền) | Vai trò bổ trợ trong hệ thống |
 | :--- | :--- | :---: | :---: | :---: | :--- |
 | **S0** | **Đăng nhập / Xác thực sinh viên** | | | | Xác thực định danh & phân luồng KTX |
-
 | **S1** | **Tra cứu đặt đồ ăn** | **X** *(Bắt đầu)* | **X** *(Kết thúc)* | | Khám phá quán ăn & lọc ca nhận |
-
 | **S2** | **Chi tiết Quán ăn & Thực đơn** | **X** | | | Xem menu & bảng tin thông báo quán |
-
 | **S3** | **Tùy biến món ăn** | **X** | | | Tùy chọn kích cỡ, topping, ghi chú vị |
-
 | **S4** | **Giỏ hàng & Thanh toán gom đơn** | **X** | | | Chọn điểm cổng KTX, ca nhận, mã giảm giá |
-
 | **S5** | **Thanh toán online** | **X** | | | Quét VietQR động chính xác số tiền |
-
 | **S5_Success** | **Dialog Xác nhận Đặt hàng thành công** | **X** | | | Phản hồi xác nhận đặt đơn tức thì |
-
 | **S6** | **Theo dõi Đơn hàng thời gian thực** | **X** *(Kết thúc)* | **X** *(Bắt đầu)* | **X** | Theo dõi tiến trình & mở nhận hàng/khiếu nại |
-
 | **S7** | **Mã QR Nhận hàng tại Cổng KTX** | | **X** | | Đối soát nhận hàng nhanh với shipper |
-
 | **S8** | **Khiếu nại và hoàn tiền** | | | **X** *(Phục hồi)* | Biểu mẫu giải quyết sự cố đơn hàng |
-
 | **S9** | **Đánh giá và phản hồi** | | **X** *(Kết thúc)* | | Chấm điểm sao cho Quán ăn và Shipper |
-
 | **S10** | **Lịch sử đơn hàng** | | | **X** | Tra cứu đơn cũ, đặt lại hoặc khởi tạo khiếu nại |
-
 | **S11** | **Danh sách yêu thích** | | | | Lưu quán quen để đặt lại nhanh |
-
 | **S12** | **Bảng thông báo** | | | | Cập nhật thông báo hệ thống & Cut-off time |
-
 | **S13** | **Hồ sơ cá nhân / Cài đặt tài khoản** | | | | Quản lý thông tin KTX, STK hoàn tiền mặc định |
 
 ---
