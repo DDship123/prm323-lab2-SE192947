@@ -41,7 +41,7 @@ Theo quy định của đề bài: *"Một vòng lặp chỉ được tính khi 
   - Thiếu hoàn toàn trạng thái vô hiệu hóa (`Disabled State`), dẫn đến nguy cơ sinh viên bấm nhầm nút gửi đơn khi đã quá hạn giờ chốt gom (*Cut-off Time*).
 * **Hành động:** Viết lại prompt chi tiết ép buộc AI nhận diện chính xác mã màu `#FF5722`, bổ sung trạng thái Disabled nền xám nhạt với độ mờ tương phản phù hợp.
 * **Minh chứng hình ảnh:**
-  - Ảnh prompt & phản hồi AI Vòng 1: `assests/figma/Đạt/component-1/1.1.png`
+  - Ảnh prompt & phản hồi AI Vòng 1: `assests/figma/Dat/component-1/1.1.png`
 
 ### 🔄 Vòng lặp 2: Chuẩn tiếp cận công thái học & Bản địa hóa tiếng Việt (Accessibility & Localization)
 * **Tên vòng lặp:** `Iteration 2: Enforce 48x48dp Touch Target & Vietnamese Localization`
@@ -50,7 +50,7 @@ Theo quy định của đề bài: *"Một vòng lặp chỉ được tính khi 
   - Toàn bộ nhãn text hiển thị bằng tiếng Anh mặc định (*"Place Order", "Submit", "Search"*), không phù hợp với ứng dụng dành cho sinh viên Việt Nam tại ĐHQG-HCM.
 * **Hành động:** Bổ sung ràng buộc công thái học: Chiều cao tối thiểu bắt buộc là **$48\text{dp}$** (chuẩn WCAG Touch Target) và bản địa hóa 100% nhãn tiếng Việt chuẩn: *"Đặt món ngay"*, *"Đang xử lý..."*, *"Mở mã QR nhận hàng"*.
 * **Minh chứng hình ảnh:**
-  - Ảnh prompt & phản hồi AI Vòng 2: `assests/figma/Đạt/component-1/1.2.png`
+  - Ảnh prompt & phản hồi AI Vòng 2: `assests/figma/Dat/component-1/1.2.png`
 
 ### 🔄 Vòng lặp 3: Tối ưu độ tương phản dưới ánh nắng gắt ngoài trời (Outdoor Sunlight Contrast & Edge Cases)
 * **Tên vòng lặp:** `Iteration 3: High-Contrast Compliance for KTX Outdoor Glare`
@@ -58,8 +58,8 @@ Theo quy định của đề bài: *"Một vòng lặp chỉ được tính khi 
   - Trạng thái chữ mờ xám của nút Disabled hoặc các dòng phụ chú không đạt tỷ lệ tương phản tối thiểu $4.5:1$, khiến sinh viên ra cổng KTX dưới trời nắng buổi trưa không thể đọc được nội dung chữ (chữ bị "tàng hình" do lóa sáng).
 * **Hành động:** Tăng cường độ đậm của chữ xám trong trạng thái Disabled và Text Field viền xám đậm hơn; đồng thời giữ vững độ tương phản cao của chữ trắng trên nền cam chủ đạo `#FF5722` ($4.68:1$).
 * **Minh chứng hình ảnh:**
-  - Ảnh phân tích & prompt chốt Vòng 3: `assests/figma/Đạt/component-1/1.3.png`
-  - Ảnh kết quả Master Component chốt trên Figma AI: `assests/figma/Đạt/component-1/1.4.png`
+  - Ảnh phân tích & prompt chốt Vòng 3: `assests/figma/Dat/component-1/1.3.png`
+  - Ảnh kết quả Master Component chốt trên Figma AI: `assests/figma/Dat/component-1/1.4.png`
 
 ---
 
@@ -70,7 +70,7 @@ Dưới đây là ghi nhận nguyên văn toàn bộ Prompt từng chữ, quá t
 ---
 
 ### 🔹 Component 1: Master Button (Nút bấm tương tác)
-* **Thư mục ảnh minh chứng:** `assests/figma/Đạt/component-1/`
+* **Thư mục ảnh minh chứng:** `assests/figma/Dat/component-1/`
 * **Vấn đề đặt ra:** Nút ban đầu thiếu mã màu `#FF5722`, thiếu trạng thái Disabled và Touch Target nhỏ hơn 48dp.
 * **Nguyên văn Prompt Vòng 1:**
   > `"Generate an isolated vertical mobile frame for a master Button component in a student food ordering app (KTXFood). The primary active button must use the exact brand primary orange color (#FF5722) with bold white text (ensuring high contrast for readability), standard touch target height of 48px, 8px border radius, and explicit horizontal padding. Additionally, include a distinct Disabled state variant with a muted light-gray background to indicate when a student cannot click during order processing or cut-off time expiration."`
@@ -79,130 +79,130 @@ Dưới đây là ghi nhận nguyên văn toàn bộ Prompt từng chữ, quá t
 * **Nguyên văn Prompt Vòng 3 (Chốt):**
   > `"Generate the final master Button component for KTXFood, based on prior feedback regarding accessibility under direct sunlight. The primary button retains its active state with brand orange (#FF5722) and bold white text (4.5:1 contrast). The critical change is to the Disabled state variant: The background color is a distinct light gray, but the text color must be adjusted to a darker medium gray (ensuring a minimum 4.5:1 contrast ratio against the light gray background) to guarantee clear readability for students viewing the screen outdoors. Maintain the 48px height, 8px radius, and localized Vietnamese text ('Đặt món ngay', 'Đang xử lý...'). Output as a finalized, high-contrast accessible master component."`
 * **Ảnh chụp kết quả:**
-  - ![Button Iteration 1](file:///d:/01_Du_an_nhom/prm323-lab2-SE192947/assests/figma/Đạt/component-1/1.1.png)
-  - ![Button Iteration 2](file:///d:/01_Du_an_nhom/prm323-lab2-SE192947/assests/figma/Đạt/component-1/1.2.png)
-  - ![Button Iteration 3](file:///d:/01_Du_an_nhom/prm323-lab2-SE192947/assests/figma/Đạt/component-1/1.3.png)
-  - ![Button Final Figma Component](file:///d:/01_Du_an_nhom/prm323-lab2-SE192947/assests/figma/Đạt/component-1/1.4.png)
+  - ![Button Iteration 1](../assests/figma/Dat/component-1/1.1.png)
+  - ![Button Iteration 2](../assests/figma/Dat/component-1/1.2.png)
+  - ![Button Iteration 3](../assests/figma/Dat/component-1/1.3.png)
+  - ![Button Final Figma Component](../assests/figma/Dat/component-1/1.4.png)
 
 ---
 
 ### 🔹 Component 2: Text Field / Input Field (Trường nhập liệu)
-* **Thư mục ảnh minh chứng:** `assests/figma/Đạt/component-2/`
+* **Thư mục ảnh minh chứng:** `assests/figma/Dat/component-2/`
 * **Vấn đề đặt ra:** Ô nhập liệu ban đầu không có trạng thái lỗi (`Error state`), không có icon xóa nhanh (`clear icon`) và viền quá mờ nhạt.
 * **Quá trình lặp qua 3 vòng:**
   - *Vòng 1:* Yêu cầu AI sinh ra khung input chuẩn có nhãn cố định trên đầu và placeholder *"Nhập ghi chú món ăn..."*.
   - *Vòng 2:* Bổ sung trạng thái `Focused` viền cam `#FF5722` 2dp và trạng thái `Error` viền đỏ `#D32F2F` kèm icon cảnh báo chấm than và dòng thông báo lỗi dưới chân ô.
   - *Vòng 3:* Thêm icon trailing xóa nhanh nội dung 1 chạm và nâng chiều cao ô lên chuẩn **$48\text{dp}$**.
 * **Ảnh chụp kết quả:**
-  - ![TextField 2.1](file:///d:/01_Du_an_nhom/prm323-lab2-SE192947/assests/figma/Đạt/component-2/2.1.png)
-  - ![TextField 2.2](file:///d:/01_Du_an_nhom/prm323-lab2-SE192947/assests/figma/Đạt/component-2/2.2.png)
-  - ![TextField 2.3](file:///d:/01_Du_an_nhom/prm323-lab2-SE192947/assests/figma/Đạt/component-2/2.3.png)
-  - ![TextField 2.4](file:///d:/01_Du_an_nhom/prm323-lab2-SE192947/assests/figma/Đạt/component-2/2.4.png)
+  - ![TextField 2.1](../assests/figma/Dat/component-2/2.1.png)
+  - ![TextField 2.2](../assests/figma/Dat/component-2/2.2.png)
+  - ![TextField 2.3](../assests/figma/Dat/component-2/2.3.png)
+  - ![TextField 2.4](../assests/figma/Dat/component-2/2.4.png)
 
 ---
 
 ### 🔹 Component 3: Food Item Card (Thẻ hiển thị món ăn)
-* **Thư mục ảnh minh chứng:** `assests/figma/Đạt/component-3/`
+* **Thư mục ảnh minh chứng:** `assests/figma/Dat/component-3/`
 * **Vấn đề đặt ra:** Card ban đầu chỉ có dạng dọc đơn điệu, thiếu thông tin quán ăn, thiếu huy hiệu món bán chạy và chưa xử lý tình huống hết hàng ca trưa.
 * **Quá trình lặp qua 3 vòng:**
   - *Vòng 1:* Tạo 2 biến thể Layout: `Vertical Card` (rộng 160dp cho lưới 2 cột ở Trang chủ) và `Horizontal Card` (rộng 328dp cho danh sách thực đơn).
   - *Vòng 2:* Bổ sung nút bấm thêm món nhanh `+` hình tròn nền cam `#FF5722` có touch target rộng rãi.
   - *Vòng 3:* Xử lý trạng thái hết món (`Sold Out`): Phủ lớp màng xám trong suốt mờ `rgba(0,0,0,0.4)` lên ảnh món kèm nhãn *"Hết hàng ca này"* và nút thêm chuyển sang dạng Disabled xám.
 * **Ảnh chụp kết quả:**
-  - ![Food Card 3.1](file:///d:/01_Du_an_nhom/prm323-lab2-SE192947/assests/figma/Đạt/component-3/3.1.png)
-  - ![Food Card 3.2](file:///d:/01_Du_an_nhom/prm323-lab2-SE192947/assests/figma/Đạt/component-3/3.2.png)
-  - ![Food Card 3.3](file:///d:/01_Du_an_nhom/prm323-lab2-SE192947/assests/figma/Đạt/component-3/3.3.png)
-  - ![Food Card 3.4](file:///d:/01_Du_an_nhom/prm323-lab2-SE192947/assests/figma/Đạt/component-3/3.4.png)
+  - ![Food Card 3.1](../assests/figma/Dat/component-3/3.1.png)
+  - ![Food Card 3.2](../assests/figma/Dat/component-3/3.2.png)
+  - ![Food Card 3.3](../assests/figma/Dat/component-3/3.3.png)
+  - ![Food Card 3.4](../assests/figma/Dat/component-3/3.4.png)
 
 ---
 
 ### 🔹 Component 4: Bottom Navigation Bar (Thanh điều hướng đáy)
-* **Thư mục ảnh minh chứng:** `assests/figma/Đạt/component-4/`
+* **Thư mục ảnh minh chứng:** `assests/figma/Dat/component-4/`
 * **Vấn đề đặt ra:** Thanh menu đáy ban đầu thiếu chỉ báo trực quan cho tab đang chọn và không có chấm thông báo đơn hàng đang giao.
 * **Quá trình lặp qua 3 vòng:**
   - *Vòng 1:* Định hình 4 tab cố định bám sát luồng của sinh viên KTX: *Trang chủ*, *Đơn hàng*, *Yêu thích*, *Tài khoản*.
   - *Vòng 2:* Bổ sung viên thuốc chỉ báo (Pill Indicator) nền `#FBE9E7` ôm trọn icon active cùng nhãn chữ cam `#FF5722`.
   - *Vòng 3:* Thêm chấm Badge đỏ/cam trên icon *Đơn hàng* để sinh viên lập tức biết có shipper đang mang đồ ăn đến cổng KTX.
 * **Ảnh chụp kết quả:**
-  - ![BottomNav 4.1](file:///d:/01_Du_an_nhom/prm323-lab2-SE192947/assests/figma/Đạt/component-4/4.1.png)
-  - ![BottomNav 4.2](file:///d:/01_Du_an_nhom/prm323-lab2-SE192947/assests/figma/Đạt/component-4/4.2.png)
-  - ![BottomNav 4.3](file:///d:/01_Du_an_nhom/prm323-lab2-SE192947/assests/figma/Đạt/component-4/4.3.png)
-  - ![BottomNav 4.4](file:///d:/01_Du_an_nhom/prm323-lab2-SE192947/assests/figma/Đạt/component-4/4.4.4.png) *(File 4.4.png)*
+  - ![BottomNav 4.1](../assests/figma/Dat/component-4/4.1.png)
+  - ![BottomNav 4.2](../assests/figma/Dat/component-4/4.2.png)
+  - ![BottomNav 4.3](../assests/figma/Dat/component-4/4.3.png)
+  - ![BottomNav 4.4](../assests/figma/Dat/component-4/4.4.png)
 
 ---
 
 ### 🔹 Component 5: App Bar / Top Navigation (Thanh tiêu đề đỉnh)
-* **Thư mục ảnh minh chứng:** `assests/figma/Đạt/component-5/`
+* **Thư mục ảnh minh chứng:** `assests/figma/Dat/component-5/`
 * **Vấn đề đặt ra:** Header thiếu nút Back vùng bấm nhỏ dễ bấm hụt, chưa tích hợp vị trí KTX Khu A / Khu B.
 * **Quá trình lặp qua 3 vòng:**
   - *Vòng 1:* Dựng biến thể Header Trang chủ có dropdown chọn điểm nhận cố định *"Cổng KTX Khu A ▾"*.
   - *Vòng 2:* Dựng biến thể Detail Header có nút quay lại (Back arrow) với touch target bao quanh đạt chuẩn $48\times 48\text{dp}$.
   - *Vòng 3:* Tích hợp huy hiệu số lượng món trên icon Giỏ hàng và số thông báo chưa đọc trên icon Chuông.
 * **Ảnh chụp kết quả:**
-  - ![AppBar 5.1](file:///d:/01_Du_an_nhom/prm323-lab2-SE192947/assests/figma/Đạt/component-5/5.1.png)
-  - ![AppBar 5.2](file:///d:/01_Du_an_nhom/prm323-lab2-SE192947/assests/figma/Đạt/component-5/5.2.png)
-  - ![AppBar 5.3](file:///d:/01_Du_an_nhom/prm323-lab2-SE192947/assests/figma/Đạt/component-5/5.3.png)
-  - ![AppBar 5.4](file:///d:/01_Du_an_nhom/prm323-lab2-SE192947/assests/figma/Đạt/component-5/5.4.png)
+  - ![AppBar 5.1](../assests/figma/Dat/component-5/5.1.png)
+  - ![AppBar 5.2](../assests/figma/Dat/component-5/5.2.png)
+  - ![AppBar 5.3](../assests/figma/Dat/component-5/5.3.png)
+  - ![AppBar 5.4](../assests/figma/Dat/component-5/5.4.png)
 
 ---
 
 ### 🔹 Component 6: Dialog & Pop-up Overlays (Hộp thoại xác nhận & Phản hồi)
-* **Thư mục ảnh minh chứng:** `assests/figma/Đạt/component-6/`
+* **Thư mục ảnh minh chứng:** `assests/figma/Dat/component-6/`
 * **Vấn đề đặt ra:** Dialog mặc định khô khan, không có icon phân loại cảm xúc (thành công vs cảnh báo nguy hiểm), nút bấm san sát nhau.
 * **Quá trình lặp qua 3 vòng:**
   - *Vòng 1:* Tạo Dialog Đặt hàng thành công (`S5_OrderSuccessDialog`) với icon check tròn xanh lá, thể hiện mã đơn `#KTX...`.
   - *Vòng 2:* Tạo Danger Dialog xác nhận Hủy đơn hàng với icon tam giác cảnh báo cam đỏ `#D32F2F` cùng 2 nút phân cấp rõ ràng (Nút giữ lại đơn & Nút hủy).
   - *Vòng 3:* Căn chỉnh khoảng cách lề trong (Padding 24dp), bo góc 16dp và bổ sung lớp phủ tối nền mờ đen `rgba(0,0,0,0.5)` phân tách thị giác.
 * **Ảnh chụp kết quả:**
-  - ![Dialog 6.1](file:///d:/01_Du_an_nhom/prm323-lab2-SE192947/assests/figma/Đạt/component-6/6.1.png)
-  - ![Dialog 6.2](file:///d:/01_Du_an_nhom/prm323-lab2-SE192947/assests/figma/Đạt/component-6/6.2.png)
-  - ![Dialog 6.3](file:///d:/01_Du_an_nhom/prm323-lab2-SE192947/assests/figma/Đạt/component-6/6.3.png)
-  - ![Dialog 6.4](file:///d:/01_Du_an_nhom/prm323-lab2-SE192947/assests/figma/Đạt/component-6/6.4.png)
+  - ![Dialog 6.1](../assests/figma/Dat/component-6/6.1.png)
+  - ![Dialog 6.2](../assests/figma/Dat/component-6/6.2.png)
+  - ![Dialog 6.3](../assests/figma/Dat/component-6/6.3.png)
+  - ![Dialog 6.4](../assests/figma/Dat/component-6/6.4.png)
 
 ---
 
 ### 🔹 Component 7: Loading State & Skeleton Loaders (Trạng thái đang tải)
-* **Thư mục ảnh minh chứng:** `assests/figma/Đạt/component-7/`
+* **Thư mục ảnh minh chứng:** `assests/figma/Dat/component-7/`
 * **Vấn đề đặt ra:** Ứng dụng chỉ có spinner quay đơn điệu khiến người dùng cảm giác chờ đợi lâu, không phản hồi được tiến trình kiểm tra mã VietQR.
 * **Quá trình lặp qua 3 vòng:**
   - *Vòng 1:* Sinh ra Skeleton Loader mô phỏng khung card món ăn bằng dải xám bo góc nhằm chống hiện tượng giật giật màn hình (Cumulative Layout Shift).
   - *Vòng 2:* Bổ sung hiệu ứng chuyển động Shimmer lượn sóng từ xám nhạt `#EEEEEE` sang `#E0E0E0`.
   - *Vòng 3:* Bổ sung Circular Progress Indicator màu cam `#FF5722` đi kèm text chỉ dẫn rõ ràng: *"Đang kiểm tra giao dịch chuyển khoản VietQR... Vui lòng không tắt ứng dụng."*
 * **Ảnh chụp kết quả:**
-  - ![Loading 7.1](file:///d:/01_Du_an_nhom/prm323-lab2-SE192947/assests/figma/Đạt/component-7/7.1.png)
-  - ![Loading 7.2](file:///d:/01_Du_an_nhom/prm323-lab2-SE192947/assests/figma/Đạt/component-7/7.2.png)
-  - ![Loading 7.3](file:///d:/01_Du_an_nhom/prm323-lab2-SE192947/assests/figma/Đạt/component-7/7.3.png)
-  - ![Loading 7.4](file:///d:/01_Du_an_nhom/prm323-lab2-SE192947/assests/figma/Đạt/component-7/7.4.png)
+  - ![Loading 7.1](../assests/figma/Dat/component-7/7.1.png)
+  - ![Loading 7.2](../assests/figma/Dat/component-7/7.2.png)
+  - ![Loading 7.3](../assests/figma/Dat/component-7/7.3.png)
+  - ![Loading 7.4](../assests/figma/Dat/component-7/7.4.png)
 
 ---
 
 ### 🔹 Component 8: Empty State (Trạng thái rỗng / Không có dữ liệu)
-* **Thư mục ảnh minh chứng:** `assests/figma/Đạt/component-8/`
+* **Thư mục ảnh minh chứng:** `assests/figma/Dat/component-8/`
 * **Vấn đề đặt ra:** Màn hình giỏ hàng và danh sách quán yêu thích khi mới cài đặt bị bỏ trống trơn, người dùng không biết cần làm gì tiếp theo.
 * **Quá trình lặp qua 3 vòng:**
   - *Vòng 1:* Bổ sung hình minh họa biểu tượng giỏ hàng rỗng và kính lúp không tìm thấy kết quả.
   - *Vòng 2:* Viết lại văn bản hướng dẫn thân thiện sinh viên: *"Giỏ hàng của bạn đang trống. Hãy chọn món ngon quanh KTX để kịp ca trưa nhé!"*
   - *Vòng 3:* Thêm nút hành động chính (Call To Action) *"Khám phá quán ngay"* (chiều cao 48dp) để điều hướng trực tiếp sinh viên về Trang chủ `S1`.
 * **Ảnh chụp kết quả:**
-  - ![EmptyState 8.1](file:///d:/01_Du_an_nhom/prm323-lab2-SE192947/assests/figma/Đạt/component-8/8.1.png)
-  - ![EmptyState 8.2](file:///d:/01_Du_an_nhom/prm323-lab2-SE192947/assests/figma/Đạt/component-8/8.2.png)
-  - ![EmptyState 8.3](file:///d:/01_Du_an_nhom/prm323-lab2-SE192947/assests/figma/Đạt/component-8/8.3.png)
-  - ![EmptyState 8.4](file:///d:/01_Du_an_nhom/prm323-lab2-SE192947/assests/figma/Đạt/component-8/8.4.png)
+  - ![EmptyState 8.1](../assests/figma/Dat/component-8/8.1.png)
+  - ![EmptyState 8.2](../assests/figma/Dat/component-8/8.2.png)
+  - ![EmptyState 8.3](../assests/figma/Dat/component-8/8.3.png)
+  - ![EmptyState 8.4](../assests/figma/Dat/component-8/8.4.png)
 
 ---
 
 ### 🔹 Component 9: Error State & Inline Alert (Trạng thái lỗi & Cảnh báo)
-* **Thư mục ảnh minh chứng:** `assests/figma/Đạt/component-9/`
+* **Thư mục ảnh minh chứng:** `assests/figma/Dat/component-9/`
 * **Vấn đề đặt ra:** Khi mất mạng wifi KTX hoặc sinh viên nhập thiếu ảnh bằng chứng khiếu nại thì không có cảnh báo dẫn dắt giải quyết lỗi.
 * **Quá trình lặp qua 3 vòng:**
   - *Vòng 1:* Dựng Inline Alert Banner nền đỏ nhạt `#FFEBEE` viền đỏ `#D32F2F` để báo lỗi thiếu ảnh chụp thực tế đồ ăn hư hỏng tại màn hình `S8`.
   - *Vòng 2:* Dựng Full-screen Error Page khi mất mạng Internet: Icon mất kết nối + lời giải thích do sóng wifi KTX chập chờn.
   - *Vòng 3:* Bổ sung nút bấm CTA *"Thử lại kết nối"* (Outline button) giúp sinh viên bấm reload mà không phải thoát ứng dụng ra ngoài.
 * **Ảnh chụp kết quả:**
-  - ![ErrorState 9.1](file:///d:/01_Du_an_nhom/prm323-lab2-SE192947/assests/figma/Đạt/component-9/9.1.png)
-  - ![ErrorState 9.2](file:///d:/01_Du_an_nhom/prm323-lab2-SE192947/assests/figma/Đạt/component-9/9.2.png)
-  - ![ErrorState 9.3](file:///d:/01_Du_an_nhom/prm323-lab2-SE192947/assests/figma/Đạt/component-9/9.3.png)
-  - ![ErrorState 9.4](file:///d:/01_Du_an_nhom/prm323-lab2-SE192947/assests/figma/Đạt/component-9/9.4.png)
+  - ![ErrorState 9.1](../assests/figma/Dat/component-9/9.1.png)
+  - ![ErrorState 9.2](../assests/figma/Dat/component-9/9.2.png)
+  - ![ErrorState 9.3](../assests/figma/Dat/component-9/9.3.png)
+  - ![ErrorState 9.4](../assests/figma/Dat/component-9/9.4.png)
 
 ---
 
