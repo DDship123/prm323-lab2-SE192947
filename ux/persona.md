@@ -2,7 +2,7 @@
 
 ---
 
-### `P01 · PRIMARY PERSONA` <span style="float: right; color: #1a73e8; font-weight: bold;">Ưu tiên cao</span>
+### `P01 · PRIMARY PERSONA`
 
 ## Nguyễn Văn Tuấn · Sinh viên nội trú KTX ĐHQG-HCM
 *18 tuổi (minh họa) · Smartphone (Android / iOS) · 4–6 bữa/tuần (giả định)*
