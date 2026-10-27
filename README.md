@@ -60,6 +60,10 @@ PRM323_Lab2_Project/
 ├── README.md                      # Thông tin nhóm, chủ đề, persona một dòng, link Figma, AI tools, bản đồ sản phẩm
 ├── food_ordering_app_srs.md       # Đặc tả yêu cầu hệ thống (SRS), User Stories (Học sinh, Shipper, Quán ăn)
 │
+├── docs/                          # TÀI LIỆU SẢN PHẨM & QUY TẮC NGHIỆP VỤ (PRODUCT & BUSINESS RULES)
+│   ├── PRD.md                     # Product Requirement Document: Bối cảnh, mục tiêu, scope, flows, NFRs, roadmap
+│   └── business-rules.md          # Đặc tả chi tiết 16 Business Rules (BR-01 -> BR-16), phân quyền & ngoại lệ
+│
 ├── ux/                            # PHÂN TÍCH TRẢI NGHIỆM NGƯỜI DÙNG (UX ANALYSIS)
 │   ├── persona.md                 # Thẻ Proto-Persona P01 (Nguyễn Văn Tuấn), JTBD, Critical Scenario & Success Metrics
 │   └── user-flow.md               # Kiến trúc thông tin (IA) & 3 User Flows chi tiết bằng sơ đồ Mermaid
@@ -86,8 +90,10 @@ PRM323_Lab2_Project/
 
 ### Bảng tra cứu nhanh vị trí các tài liệu nộp bài:
 
-| Hạng mục chấm điểm Lab 2 | File tài liệu tương ứng trong repository | Nội dung then chốt |
+| Hạng mục tài liệu | File tài liệu tương ứng trong repository | Nội dung then chốt |
 | :--- | :--- | :--- |
+| **0. Product Requirements (PRD)** | [`docs/PRD.md`](docs/PRD.md) | Tổng quan bài toán KTX, User Personas, Scope, NFRs, Metrics và Phasing Roadmap. |
+| **0. Business Rules (BR)** | [`docs/business-rules.md`](docs/business-rules.md) | Đặc tả 16 Quy tắc nghiệp vụ (Cut-off time, Gom đơn, VietQR, Đối soát 2 lớp, Hoàn tiền). |
 | **1. Persona & Problem Statement** | [`ux/persona.md`](ux/persona.md) | Thẻ Proto-Persona chuẩn, JTBD, bối cảnh KTX, tiêu chí hoàn tất đặt món < 30s và nhận đồ < 20s. |
 | **2. User Flow & Screen Architecture** | [`ux/user-flow.md`](ux/user-flow.md) | Phân cấp điều hướng 2 tầng, danh mục màn hình Figma, 3 sơ đồ Flow chi tiết. |
 | **3. Design System & Tokens** | [`design/DESIGN.md`](design/DESIGN.md) | Bộ Color Tokens chuẩn M3, Typography Scale, 8-pt Grid và 9 bộ Master Components. |
