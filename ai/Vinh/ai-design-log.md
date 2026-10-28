@@ -7,7 +7,7 @@
 > **Người thực hiện:** Thành viên 4 – Quách Ngọc Vinh (MSSV: SE194159)  
 > **Công cụ AI:** Google Stitch (sinh và tinh chỉnh màn hình) + Claude / ChatGPT (phản biện theo Heuristics & WCAG)  
 > **Hệ thống:** Giao nhận đồ ăn sinh viên tại Ký túc xá Khu B (KTX Food Delivery System)  
-> **Tiêu chuẩn áp dụng:** 10 Usability Heuristics của Jakob Nielsen, WCAG 2.1 (AA/AAA), Mobile Ergonomics (Thumb Zone), Design System chung của nhóm (`design1.png`, `design2.png`)  
+> **Tiêu chuẩn áp dụng:** 10 Usability Heuristics của Jakob Nielsen, WCAG 2.1 (AA/AAA), Mobile Ergonomics (Thumb Zone), Design System chung của nhóm  
 > **Thư mục ảnh minh chứng:** `assests/stitch/Vinh/`
 
 ---
@@ -16,8 +16,6 @@
 
 | Nhóm | Tên file | Nội dung thực tế trong ảnh |
 | :---: | :--- | :--- |
-| Design System | `design1.png` | Thang chữ (Typography): font Inter, 4 kiểu Heading 1 / Heading 2 / Body / Caption. |
-| Design System | `design2.png` | Bảng màu (Color Palette Tokens) và khoảng cách (Spacing Guide 8 / 16 / 24dp). |
 | Vòng 1 | `v1_before-1.png` | Bản gốc: sơ đồ User Flow đặt món & thanh toán + 5 màn (Trang chủ, Chi tiết quán, Tùy biến món, Thanh toán gom đơn, Chuyển khoản VietQR). |
 | Vòng 1 | `v1_after-1.png` | Bản chốt của 5 màn trên (màn 1 → 5). |
 | Vòng 1 | `v1_before-2.png` | Bản gốc: sơ đồ User Flow nhận hàng + 4 màn (Theo dõi đơn, Mã nhận QR, Khiếu nại & Hoàn tiền, quay về Trang chủ). |
@@ -35,7 +33,7 @@
 
 ## 0.1. QUY TẮC THIẾT KẾ CHUNG (DESIGN SYSTEM) ÁP DỤNG CHO CÁC BẢN CHỐT
 
-### Typography – font Inter (`design1.png`)
+### Typography – font Inter
 
 | Kiểu chữ | Độ đậm | Cỡ chữ | Chiều cao dòng | Dùng cho |
 | :--- | :--- | :---: | :---: | :--- |
@@ -46,7 +44,7 @@
 
 > Body 16px / dòng 24px, cao hơn ngưỡng tối thiểu 14sp để đọc tốt trên di động.
 
-### Color Palette Tokens (`design2.png`)
+### Color Palette Tokens
 
 | Token | Mã màu | Vai trò trong bản chốt |
 | :--- | :---: | :--- |
@@ -56,13 +54,21 @@
 | Text Secondary | `#757575` | Mô tả, chú thích, thông tin phụ |
 | Error Red | `#F44336` | Trạng thái lỗi, cảnh báo, nút khiếu nại |
 
-### Spacing Guide Blocks (`design2.png`)
+### Spacing Guide Blocks
 
 | Token | Giá trị | Dùng cho |
 | :--- | :---: | :--- |
 | Small | 8dp | Khoảng cách giữa icon và nhãn, giữa các chip |
 | Medium | 16dp | Lề trong của thẻ, khoảng cách giữa các nút cạnh nhau |
 | Large | 24dp | Khoảng cách giữa các khối nội dung lớn |
+
+### Header (App Bar) dùng chung
+
+| Loại màn | Cấu trúc header | Áp dụng cho |
+| :--- | :--- | :--- |
+| Màn duyệt món | Dòng "GIAO ĐẾN – Cổng KTX Khu B - ĐHQG", lời chào 1 dòng, ô tìm kiếm | Trang chủ, Chi tiết quán |
+| Màn chức năng | Nút quay lại hình tròn bên trái · tiêu đề căn giữa · avatar bên phải | Thanh toán gom đơn (kèm icon cửa hàng cạnh tiêu đề), Theo dõi đơn, Mã nhận, Khiếu nại, Đánh giá, Lịch sử, Empty / Error State |
+| Màn dạng modal | Nút quay lại bên trái · tiêu đề căn giữa · nút đóng "X" bên phải | Tùy biến món, Thanh toán online |
 
 ---
 
@@ -104,7 +110,7 @@ Vòng 1 được áp dụng trên 11 màn hình, chia thành 3 cặp ảnh theo 
 
 ## 1.3. Phản hồi của AI & Chi tiết tối ưu hóa 11 màn hình chuẩn
 
-> **Áp dụng chung cho cả 11 màn:** nút chính nền Primary Orange `#FF5722` chữ trắng, nút phụ dạng viền; tiêu đề `#111111`, chữ phụ `#757575`; font Inter theo thang 24 / 20 / 16 / 14px; lề thẻ 16dp.
+> **Áp dụng chung cho cả 11 màn:** nút chính nền Primary Orange `#FF5722` chữ trắng, nút phụ dạng viền; tiêu đề `#111111`, chữ phụ `#757575`; font Inter theo thang 24 / 20 / 16 / 14px; lề thẻ 16dp; header theo 3 mẫu dùng chung ở mục 0.1.
 
 ### Màn 1. Trang Chủ Đặt Món & Ca Gom KTX (Bản Chốt Chuẩn)
 
@@ -112,9 +118,10 @@ Vòng 1 được áp dụng trên 11 màn hình, chia thành 3 cặp ảnh theo 
 
 **Tối ưu nổi bật:**
 
+- **Header gọn:** "GIAO ĐẾN – Cổng KTX Khu B - ĐHQG" và lời chào rút còn 1 dòng "Chào Linh! Trưa nay ăn gì?".
 - **Thanh điều hướng & Giỏ hàng nổi:** Giữ trọn vẹn thanh Bottom Navigation 5 tab chuẩn (Khám phá, Đặt món, Thanh toán, Lịch sử, Tài khoản) cùng thanh giỏ hàng nổi "Đơn gom KTX Khu B • 1 món • 35.000đ" với nút "Xem giỏ hàng" màu Primary Orange #FF5722.
-- **Banner đếm ngược ca trưa:** Banner cam đếm ngược chốt đơn ca trưa lớn, rõ ràng (00:28:45), nhãn "CA TRƯA ĐANG MỞ" nổi bật.
-- **Xử lý Text Wrapping:** Khung chữ tiêu đề quán, khoảng cách (150m), tag freeship và khoảng giá (28.000đ - 45.000đ) dùng container co giãn tự nhiên (auto-width), loại bỏ lỗi rớt chữ cụt lủn.
+- **Banner đếm ngược ca trưa:** Banner cam "Ca Trưa (11:30 - 12:00) • ĐANG MỞ", đếm ngược 00:28:45, "Chốt lúc 10:45" và "Đã gom 42 đơn Khu B".
+- **Xử lý Text Wrapping:** Tên quán rút gọn ("Cơm Tấm Sườn Bì Khu B - Cổng 3", "Bún Đậu Mắm Tôm Cô Bông KTX", "Trà Sữa Đậm Vị KTX Khu B"), khoảng cách "Cổng 3 KTX (150m)" và khoảng giá (28.000đ - 45.000đ) nằm trọn 1 dòng.
 
 ### Màn 2. Chi Tiết Quán & Thực Đơn Cơm Tấm (Bản Chốt Chuẩn)
 
@@ -122,8 +129,9 @@ Vòng 1 được áp dụng trên 11 màn hình, chia thành 3 cặp ảnh theo 
 
 **Tối ưu nổi bật:**
 
-- **Header quán Cơm Tấm Cô Ba:** Đầy đủ thông tin định danh: tích xác thực, khoảng cách 600m, đánh giá 4.9 sao, thông báo "Bảng tin Cô Ba hôm nay" và đồng hồ đếm ngược chốt đơn 24:59.
-- **Phân loại tab súc tích:** Cấu trúc 3 tab tinh gọn: Món Bán Chạy 🔥 (tab đang chọn nền cam), Cơm Tấm, Món Thêm / Topping.
+- **Header đồng bộ với Trang chủ:** Giữ dòng "GIAO ĐẾN", lời chào và ô tìm kiếm để sinh viên không mất ngữ cảnh khi đi từ Trang chủ vào quán.
+- **Thông tin quán tinh gọn:** Ảnh bìa gắn nhãn "KTX Khu B (Cổng 2)" và "Cách 600m"; dưới là "Cơm Tấm Cô Ba" (tích xác thực), một hàng "★ 4.9 · Freeship · 11:30", khối đếm ngược "24:59 CHỐT ĐƠN" và "BẢNG TIN CÔ BA HÔM NAY – Tặng trà đá cho nhóm từ 3 phần".
+- **Thực đơn ít chữ:** Mỗi món chỉ giữ ảnh, tên và giá (bỏ đoạn mô tả dài); tab Món Bán Chạy / Cơm Tấm / Món Thêm cuộn ngang.
 - **Thanh ghim đáy (Sticky Bar):** Cố định hiển thị "Chốt đơn • 70.000đ" với vùng bấm đạt chuẩn $\ge 48\text{dp}$, phía dưới bổ sung lại Bottom Navigation (bản gốc không có).
 
 ### Màn 3. Tùy Biến Món Ăn (Bản Chốt Chuẩn)
@@ -132,7 +140,8 @@ Vòng 1 được áp dụng trên 11 màn hình, chia thành 3 cặp ảnh theo 
 
 **Tối ưu nổi bật:**
 
-- **Compact Vertical Layout:** Phân chia 5 khối logic gọn gàng (Kích cỡ / Phần ăn, Khẩu vị & Mỡ hành, Topping thêm, Độ cay & Nước mắm, Ghi chú), mỗi khối có vạch nhấn cam ở tiêu đề và nhãn "Bắt buộc" / "Tùy chọn".
+- **Header dạng modal:** Nút quay lại, tiêu đề "Tùy Biến Món Ăn" căn giữa và nút đóng "X".
+- **Compact Vertical Layout:** Phân chia 5 khối logic gọn gàng (Kích cỡ / Phần ăn, Khẩu vị & Mỡ hành, Topping thêm, Độ cay & Nước mắm, Ghi chú), mỗi khối có vạch nhấn cam ở tiêu đề và nhãn "Bắt buộc • Chọn 1" / "Tùy chọn • Tối đa 5".
 - **Nút CTA ghim đáy:** Kết hợp bộ đếm số lượng (- 1 +) cùng nút "Thêm vào giỏ • 46.000đ" nền #FF5722, chữ trắng in đậm trọn vẹn trên 1 dòng (bản gốc nhãn bị rớt thành 2 dòng).
 
 ### Màn 4. Thanh Toán Gom Đơn & Điểm Nhận KTX (Bản Chốt Chuẩn)
@@ -141,6 +150,7 @@ Vòng 1 được áp dụng trên 11 màn hình, chia thành 3 cặp ảnh theo 
 
 **Tối ưu nổi bật:**
 
+- **Header & nhắc giờ chốt:** Header chức năng "Thanh Toán Gom Đơn", ngay dưới là dải "Đợt gom Ca Trưa sắp đóng – 10:45".
 - **Cấu trúc 6 bước mạch lạc:** Điểm nhận cố định tại Cổng Khu B, Khung giờ ca trưa, Tóm tắt món, Mã giảm giá SINHVIENKTX, Phương thức VietQR và Bảng chi tiết thanh toán; mỗi bước đánh số trong ô cam.
 - **Nút CTA chính ghim đáy:** "Đặt đơn nhận tại Cổng KTX Khu B (45.000đ)" cao 52dp, nền #FF5722.
 
@@ -150,6 +160,7 @@ Vòng 1 được áp dụng trên 11 màn hình, chia thành 3 cặp ảnh theo 
 
 **Tối ưu nổi bật:**
 
+- **Header dạng modal & giữ chỗ:** Tiêu đề "Thanh toán online" có nút đóng "X"; thẻ "GIỮ CHỖ ĐƠN GOM CA TRƯA" đếm ngược 09:57.
 - **Khối mã VietQR Napas247:** Khung QR tương phản cao kèm 2 nút phụ dạng viền "Lưu ảnh QR" và "Mở App Bank", vùng chạm $\ge 48\times 48\text{dp}$, cách nhau $16\text{dp}$ chống bấm nhầm khi đi bộ.
 - **Khối thông tin chuyển khoản:** 3 nút "Sao chép" 1 chạm độc lập (STK, Số tiền 45.000 đ, Nội dung bắt buộc KTX8829B LE THUY LINH), thay cho các nhãn "content_copy" bị lỗi hiển thị ở bản gốc.
 - **Nút hành động chính ghim đáy:** "Tôi đã hoàn tất chuyển khoản" nền #FF5722.
@@ -160,21 +171,23 @@ Vòng 1 được áp dụng trên 11 màn hình, chia thành 3 cặp ảnh theo 
 
 **Tối ưu nổi bật:**
 
-- **Tiến trình giao hàng 4 bước:** Đã chốt & Bếp nấu xong $\rightarrow$ Tài xế đã lấy món $\rightarrow$ Đang tới KTX Khu B (bước hiện tại tô cam) $\rightarrow$ Sẵn sàng phát hàng, cùng thông tin tài xế Nguyễn Văn Minh (Honda Wave Đỏ • 59-X1 839.24) hiển thị thẳng hàng, không bị ngắt dòng.
-- **Nút CTA ghim đáy:** "Mở Mã Nhận Hàng (QR Code)" nền #FF5722, cao 50dp ($\ge 48\text{dp}$), chữ nằm trọn 1 dòng.
+- **Header chức năng:** Tiêu đề "Theo Dõi Đơn Hàng" căn giữa; thẻ đầu "ĐANG GIAO HÀNG • 3/4 – Gom đợt 12 đơn – Tài xế đang tới Cổng KTX".
+- **Tiến trình giao hàng 4 bước:** Đã chốt & Bếp nấu xong $\rightarrow$ Tài xế đã nhận món $\rightarrow$ Đang tới KTX Khu B (bước hiện tại tô cam, dự kiến 11:28) $\rightarrow$ Sẵn sàng phát hàng, cùng thông tin tài xế Nguyễn Văn Minh (Honda Wave Đỏ • 59-X1 839.24) hiển thị thẳng hàng, không bị ngắt dòng.
+- **Nút CTA ghim đáy:** "Mở Mã Nhận Hàng (QR Code)" nền #FF5722, cao 50dp ($\ge 48\text{dp}$), chữ nằm trọn 1 dòng; bên dưới là liên kết phụ "Khiếu nại / Báo sự cố đơn hàng".
 - **Khôi phục Bottom Navigation:** Bổ sung thanh điều hướng 5 tab với chấm cam active tại tab Lịch sử (bản gốc không có thanh điều hướng).
-- **Bố cục súc tích:** Mini map "Đang đi: Đường Tạ Quang Bửu – Cách cổng 450m" kèm nhãn "Đơn xếp số 04/12 trong đợt phát trưa".
+- **Bố cục súc tích:** Mini map rút gọn nhãn còn "Đang đi: Đ. Tạ Quang Bửu – Cách cổng 450m", kèm "Đơn xếp số 04/12 đợt trưa" và "Tiết kiệm 15k ship".
 
-### Màn 7. Mã Nhận Hàng & QR Đối Soát Cổng KTX (Bản Chốt Chuẩn)
+### Màn 7. Mã Nhận Đồ Ăn & QR Đối Soát Cổng KTX (Bản Chốt Chuẩn)
 
 **Đối chiếu ảnh:** Cặp 2 – màn thứ hai (`v1_before-2.png` → `v1_after-2.png`).
 
 **Tối ưu nổi bật:**
 
-- **Khối Mã QR & Phím Sáng Max:** Bản gốc đặt nút "Tăng độ sáng" thành một thanh ngang cạnh nút "Theo dõi đơn" ngay dưới QR; bản chốt tinh giản thành nút quick-action "Sáng max" ở góc trên bên phải khung QR.
-- **Mã 4 số đối soát:** Số 4829 đặt trong ô viền cam nổi bật để đọc to cho shipper.
-- **Banner chống thu nhầm tiền:** Dải xanh lá đậm "ĐÃ THANH TOÁN (VIETQR) • KHÔNG THU TIỀN" ngay dưới mã QR.
-- **Nút hành động ghim đáy:** Nút phụ dạng viền "Theo dõi đơn" / "Khiếu nại / Báo sự cố" phía trên nút chính "Xác nhận nhận hàng" nền #FF5722, phía dưới là Bottom Navigation.
+- **Header chức năng:** Tiêu đề rút gọn "Mã Nhận Đồ Ăn"; dải xanh "CHỈ DẪN NHẬN NHANH" nhắc đưa mã QR hoặc đọc 4 số cuối SĐT.
+- **Khối Mã QR & Phím Sáng Max:** Bản gốc đặt nút "Tăng độ sáng" thành một thanh ngang cạnh nút "Theo dõi đơn" ngay dưới QR; bản chốt tinh giản thành nút quick-action "Sáng max" ở góc trên bên phải khung QR. Mã định danh rút còn "KTX • ORDER • 8829B".
+- **Mã 4 số đối soát:** Dãy số ẩn "••••••" kèm 4829 trong ô viền cam nổi bật để đọc to cho shipper.
+- **Banner chống thu nhầm tiền:** Dải xanh lá "ĐÃ THANH TOÁN (VIETQR) • KHÔNG THU TIỀN" ngay dưới mã QR.
+- **Nút hành động ghim đáy:** Nút phụ dạng viền "Theo dõi đơn" / "Báo sự cố" (rút gọn từ "Khiếu nại / Báo sự cố") phía trên nút chính "Xác nhận đã nhận hàng" nền #FF5722, phía dưới là Bottom Navigation.
 
 ### Màn 8. Khiếu Nại & Hoàn Tiền Nhanh KTX (Bản Chốt Chuẩn)
 
@@ -182,10 +195,11 @@ Vòng 1 được áp dụng trên 11 màn hình, chia thành 3 cặp ảnh theo 
 
 **Tối ưu nổi bật:**
 
-- **Compact Vertical Layout:** Gom 5 nhóm sự cố thành các thẻ radio súc tích, thẻ đang chọn viền cam; món bị ảnh hưởng tick sẵn "Trà Đào Cam Sả Tươi (500ml) – 10.000đ" kèm tỷ lệ hoàn 100%.
+- **Compact Vertical Layout:** Gom 5 nhóm sự cố thành các thẻ radio súc tích với nhãn ngắn ("Thiếu món / thiếu đồ", "Đồ ăn bị đổ / Hư hỏng", "Món ăn sai mô tả / Sai ghi chú", "Chất lượng không đảm bảo", "Giao nhầm đơn / Không nhận được"), thẻ đang chọn viền cam; món bị ảnh hưởng tick sẵn "Trà Đào Cam Sả Tươi (500ml) – 10.000đ" kèm tỷ lệ hoàn 100%.
+- **Tiêu đề khối viết hoa:** "BẠN ĐANG GẶP SỰ CỐ GÌ?", "MÓN ĂN BỊ ẢNH HƯỞNG", "BẰNG CHỨNG & GHI CHÚ", "PHƯƠNG THỨC NHẬN TIỀN HOÀN" giúp quét nhanh các bước của biểu mẫu.
 - **Gom gọn khu vực bằng chứng:** Ảnh tem niêm phong (Tem #8829B_KTX.jpg) và ô "Chụp thêm ảnh" xếp hàng ngang dạng thumbnail, giảm số lần vuốt màn hình.
-- **Phương thức hoàn tiền:** Ưu tiên Ví KTX Food / Xu Sinh Viên (nhận tức thì + voucher 5.000đ) và tùy chọn chuyển khoản MB Bank.
-- **Nút CTA chính ghim đáy:** "Gửi Yêu Cầu Khiếu Nại & Hoàn Tiền" nền #FF5722 ở vùng ngón cái, bên dưới bổ sung Bottom Navigation.
+- **Phương thức hoàn tiền:** Ưu tiên Ví KTX Food / Xu Sinh Viên (nhận tức thì + voucher 5.000đ bù bữa trưa) và tùy chọn chuyển khoản MB Bank.
+- **Nút CTA chính ghim đáy:** Rút gọn thành "Gửi Yêu Cầu Hoàn Tiền (10.000đ)" kèm số tiền hoàn, nền #FF5722 ở vùng ngón cái. Màn biểu mẫu này ẩn Bottom Navigation để sinh viên tập trung hoàn thành yêu cầu.
 
 ### Màn 9. Đánh Giá & Phản Hồi Sau Nhận Hàng (Màn mới – Bản Chốt Chuẩn)
 
@@ -193,10 +207,11 @@ Vòng 1 được áp dụng trên 11 màn hình, chia thành 3 cặp ảnh theo 
 
 **Tối ưu nổi bật:**
 
-- **Hai khối đánh giá tách bạch:** "01 Chất lượng Món & Quán" (5 sao – "Rất hài lòng", nhãn "Bắt buộc") và "02 Đánh giá Người Giao Hàng" (shipper Nguyễn Văn Minh, 5 sao – "Đúng giờ & Thân thiện").
-- **Chip chọn nhanh thay cho gõ phím:** "Đồ ăn nóng sốt", "Đóng gói cẩn thận", "Đúng ghi chú", "Khẩu phần đầy đặn" cho món; "Đến cổng đúng hẹn", "Nhiệt tình, lễ phép", "Bảo quản túi ăn tốt" cho shipper. Chip đang chọn viền cam.
-- **Ảnh minh chứng & ẩn danh:** Ô "+ Thêm ảnh" cho ảnh món ăn và công tắc "Đánh giá ẩn danh".
-- **Động lực hoàn thành:** Thẻ thưởng "+50 Điểm KTX (tương đương 5.000đ cho đơn ca tới)" và nút chính ghim đáy "Gửi Đánh Giá & Nhận 50 Điểm KTX" nền #FF5722.
+- **Thẻ tóm tắt đơn:** "#KTX-8829B • Ca trưa • Hôm nay, 11:45", "Cơm Tấm Cô Ba Sinh Viên" và "Điểm nhận: Cổng 2 – KTX Khu B (Cột B5)".
+- **Hai khối đánh giá tách bạch:** "01 Chất lượng Món & Quán" (5 sao – "Rất hài lòng", nhãn "Bắt buộc") và "02 Đánh giá Người Giao Hàng" (shipper Nguyễn Văn Minh, "Đội xe Gom KTX B • Chuyến 11:30 - 12:00", 5 sao – "Đúng giờ & Thân thiện").
+- **Chip chọn nhanh thay cho gõ phím:** "Đồ ăn nóng sốt", "Đóng gói cẩn thận", "Đúng ghi chú", "Khẩu phần đầy đặn" cho món; "Đến cổng đúng hẹn", "Nhiệt tình, lễ phép", "Bảo quản thức ăn tốt" cho shipper. Chip đang chọn viền cam.
+- **Ảnh minh chứng & ẩn danh:** Ô "+ Thêm ảnh" cùng 2 ô ảnh trống, ô nhận xét giới hạn 0/300 ký tự và công tắc "Đánh giá ẩn danh".
+- **Động lực hoàn thành:** Thẻ thưởng "+50 Điểm KTX (tương đương giảm 5.000đ cho đơn ca tối kế tiếp)" và nút chính ghim đáy "Gửi Đánh Giá & Nhận 50 Điểm KTX" nền #FF5722. Giống màn Khiếu nại, màn biểu mẫu này ẩn Bottom Navigation.
 
 ### Màn 10. Lịch Sử Đơn Hàng KTX (Bản Chốt Chuẩn)
 
@@ -204,6 +219,7 @@ Vòng 1 được áp dụng trên 11 màn hình, chia thành 3 cặp ảnh theo 
 
 **Tối ưu nổi bật:**
 
+- **Header chức năng gọn:** Tiêu đề "Lịch Sử Đơn Hàng" căn giữa, bỏ dòng phụ đề dưới header; ngay dưới là ô tìm kiếm mã đơn, thẻ tổng kết "GOM ĐƠN ĐHQG • THÁNG 10 – Đã gom 14 đơn • Tiết kiệm 168.000đ" và tab "Tất cả 18 / Đang diễn ra 1 / Hoàn tất 15".
 - **Khắc phục lỗi ngắt dòng:** Tên các món (Cơm Tấm Cô Ba – ĐHQG, Bún Đậu Mắm Tôm A-B ĐHQG, Trà Sữa Sinh Viên & Trà Đào, Bánh Mì Chảo KTX) và mã đơn (#KTX-8829B, #KTX-8512A, #KTX-7994B, #KTX-7420A) nằm trọn trên container tự co giãn.
 - **Đơn hàng đang giao nổi bật:** Card đơn đang giao đặt trên đầu với banner "Shipper đang tới cổng KTX ~3 phút", 2 nút phụ "Theo dõi trực tiếp" và "Mã QR Nhận Hàng" đạt $\ge 48\text{dp}$.
 - **Nút CTA chính ghim đáy:** "Mã QR Nhận Hàng" nền #FF5722 giúp sinh viên đang đi bộ ra cổng mở mã chỉ bằng 1 chạm (bản gốc chưa có nút này).
@@ -215,19 +231,21 @@ Vòng 1 được áp dụng trên 11 màn hình, chia thành 3 cặp ảnh theo 
 
 **Tối ưu nổi bật:**
 
+- **Header chức năng có ngữ cảnh:** Tiêu đề "Khiếu Nại & Hoàn Tiền" kèm dòng phụ "Bàn giao gom • Cổng KTX Khu B" và nút gọi nhanh bên phải.
 - **Compact Vertical Layout:** Gom lý do sự cố và danh sách món ảnh hưởng thành các thẻ súc tích; tự tính số tiền hoàn 100%.
 - **Gom gọn bằng chứng ảnh:** Ảnh tem niêm phong (Tem #8829B_KTX.jpg) và ô chụp thêm ảnh xếp hàng ngang dạng thumbnail.
 - **Phương thức hoàn tiền:** Ví KTX Food / Xu Sinh Viên lên đầu kèm voucher 5.000đ, hoặc chuyển khoản MB Bank.
-- **Nút CTA chính ghim đáy:** "Gửi Yêu Cầu Khiếu Nại & Hoàn Tiền" nền #FF5722, cao 52dp, chữ nằm trọn 1 dòng.
+- **Nút CTA chính ghim đáy:** "Gửi Yêu Cầu Khiếu Nại & Hoàn Tiền" nền #FF5722, cao 52dp, chữ nằm trọn 1 dòng, bên dưới là Bottom Navigation.
 
 ## 1.4. Bảng tóm tắt so sánh kỹ thuật (Before vs. AI Draft vs. Final Resolved)
 
 | Thành phần UI | Bản Cũ (Before) | Bản Mới (AI Draft) | Bản Chốt Chuẩn (Final Resolved) | Lý do Kỹ thuật & Trợ năng (Accessibility) |
 |---|---|---|---|---|
 | Ngắt dòng tiếng Việt (Text Wrapping) | Rớt 1–2 chữ cụt lủn ở tên món, mã đơn #8829B và nhãn nút bấm. | Container bị co ép chiều ngang ở một số khu vực. | Text container dùng auto-width; nhãn nút bấm nằm trọn 1 dòng. | Loại bỏ typographic orphans; tối ưu khả năng quét nhanh (scannability) khi sinh viên đang di chuyển. |
-| Màu thương hiệu & phân cấp chữ | Đỏ sậm, cỡ chữ chưa thống nhất giữa các màn. | Giữ màu cũ, tăng cỡ chữ tùy ý theo từng màn. | Primary Orange #FF5722; font Inter theo thang 24 / 20 / 16 / 14px; chữ #111111 / #757575. | Đồng bộ với Design System chung của nhóm (`design1.png`, `design2.png`), giữ nhất quán giữa các thành viên (Heuristic #4). |
-| Nút CTA Chính & Vùng ngón tay cái | Nằm inline cuộn theo trang, khó chạm khi cầm máy 1 tay. | Ghim đáy nhưng chiếm trọn đáy, che mất navigation. | Ghim đáy (Sticky Bar) cao $\ge 50\text{dp}$, nền #FF5722, chữ trắng in đậm. | Đạt Touch Target Material Design ($\ge 48\times 48\text{dp}$); nền nút đạt $\ge 3:1$ so với nền trắng (WCAG 1.4.11). Xem mục 4 về tương phản chữ. |
-| Thanh Bottom Navigation | Chỉ có ở Trang chủ; các màn Chi tiết quán, Theo dõi đơn, Khiếu nại không có. | Bị loại bỏ hoàn toàn làm đứt gãy luồng chuyển trang. | Đồng bộ Bottom Navigation 5 tab ở đáy toàn bộ 11 màn, tab active tô cam. | Giữ vững kiến trúc thông tin (IA), cho phép sinh viên chuyển tab tức thì. |
+| Màu thương hiệu & phân cấp chữ | Đỏ sậm, cỡ chữ chưa thống nhất giữa các màn. | Giữ màu cũ, tăng cỡ chữ tùy ý theo từng màn. | Primary Orange #FF5722; font Inter theo thang 24 / 20 / 16 / 14px; chữ #111111 / #757575. | Đồng bộ với Design System chung của nhóm (mục 0.1), giữ nhất quán giữa các thành viên (Heuristic #4). |
+| Header (App Bar) | Mỗi màn một kiểu: header thương hiệu, header kèm phụ đề, header trái. | Giữ header riêng theo từng màn. | 3 mẫu header dùng chung (màn duyệt món, màn chức năng, màn modal) như mục 0.1. | Heuristic #4: sinh viên luôn thấy nút quay lại và tiêu đề ở cùng vị trí trên mọi màn. |
+| Nút CTA Chính & Vùng ngón tay cái | Nằm inline cuộn theo trang, khó chạm khi cầm máy 1 tay. | Ghim đáy nhưng chiếm trọn đáy, che mất navigation. | Ghim đáy (Sticky Bar) cao $\ge 50\text{dp}$, nền #FF5722, chữ trắng in đậm. | Đạt Touch Target Material Design ($\ge 48\times 48\text{dp}$); nền nút đạt $\ge 3:1$ so với nền trắng (WCAG 1.4.11). Xem mục 5 về tương phản chữ. |
+| Thanh Bottom Navigation | Chỉ có ở Trang chủ; các màn Chi tiết quán, Theo dõi đơn, Khiếu nại không có. | Bị loại bỏ hoàn toàn làm đứt gãy luồng chuyển trang. | Bottom Navigation 5 tab ở đáy 9/11 màn, tab active tô cam; 2 màn biểu mẫu (Khiếu nại trong luồng nhận hàng, Đánh giá) thay bằng nút gửi ghim đáy. | Giữ vững kiến trúc thông tin (IA), cho phép sinh viên chuyển tab tức thì; riêng màn biểu mẫu ưu tiên hoàn thành thao tác. |
 | Khoảng cách cuộn trang (Compact Layout) | Rời rạc, thiếu nhịp đệm thị giác. | Bị kéo giãn padding quá mức (> 2400px), cuộn mỏi tay. | Tối ưu Vertical Rhythm theo bước 8 / 16 / 24dp, gom nhóm tùy chọn và thông tin đối soát. | Giảm scroll fatigue, đưa thông tin quan trọng vào màn hình đầu tiên (Above the fold). |
 | Khối Mã QR & Phím Sáng màn hình | Phím "Tăng độ sáng" chiếm 1 thanh ngang cồng kềnh dưới QR (`v1_before-2.png`). | Dàn nút viền mỏng chiếm diện tích phía dưới QR. | Nút quick-action "Sáng max" ở góc QR (`v1_after-2.png`). | Thao tác 1 chạm bật sáng nhanh dưới trời nắng gắt, tiết kiệm không gian thẳng đứng. |
 | Vùng chạm nút phụ (Secondary Action) | Các nút nhỏ đặt sát nhau dễ bấm nhầm ($< 36\text{dp}$). | Dàn nút viền mỏng chiếm diện tích. | Nút phụ dạng viền, cách nhau $16\text{dp}$, touch target $\ge 48\times 48\text{dp}$. | Tránh bấm trượt hoặc bấm nhầm khi sinh viên đang đi bộ ra bàn giao cơm. |
@@ -289,7 +307,7 @@ Trạng thái thông báo lỗi (Error State):
 - Cung cấp bảng tóm tắt: [Trạng thái | Thành phần trực quan | Nội dung thông điệp | Nút hành động CTA | Lý do kỹ thuật / UX].
 ```
 
-> Prompt trên được nhập khi nhóm chưa chốt Design System nên còn ghi màu #B52603 và #64748B. Bản chốt `v2_after.png` đã được đồng bộ lại theo token chung: nút #FF5722 / #E64A19, tiêu đề #111111, mô tả #757575.
+> Prompt trên được nhập khi nhóm chưa chốt Design System nên còn ghi màu #B52603 và #64748B. Bản chốt `v2_after.png` đã được đồng bộ lại theo token chung: nút #FF5722, tiêu đề #111111, mô tả #757575.
 
 ## 2.2. Lưu trữ hình ảnh đối chiếu Vòng 2
 
@@ -313,13 +331,13 @@ Trạng thái thông báo lỗi (Error State):
 
 **Điểm nổi bật UI & Công thái học:**
 
-- **Giữ vững Khung ứng dụng:** Header "KTX KHU B – Lịch sử đơn hàng" với icon thương hiệu nền cam, chip điểm nhận "KTX Khu B (Cổng 2)", bộ lọc "Tất cả (0)" (đang chọn, nền cam) / "Đang diễn ra (0)" / "Hoàn tất (0)" và thanh Bottom Navigation 5 tab (Lịch sử active màu cam).
+- **Giữ vững Khung ứng dụng:** Header chức năng "Lịch Sử Đơn Hàng" (nút quay lại, tiêu đề căn giữa, avatar) giống màn Lịch sử có đơn, chip điểm nhận "KTX Khu B (Cổng 2)" kèm trạng thái "Ca gom đang mở", bộ lọc dạng segmented "Tất cả (0)" (đang chọn, nền cam) / "Đang diễn ra (0)" / "Hoàn tất (0)" nằm trọn 1 dòng và thanh Bottom Navigation 5 tab (Lịch sử active màu cam).
 - **Minh họa trung tâm (Illustration):** Hộp cơm giữ nhiệt rỗng tone cam – trắng, đồng bộ màu Primary Orange.
 - **Nội dung thông điệp:**
   - Tiêu đề: "Chưa có đơn hàng nào cần nhận" (Heading 2, màu Text Primary #111111).
   - Mô tả: "Bạn không có đơn giao đến cổng KTX trong khung giờ này. Đặt món ngay để kịp chốt đơn nhé!" (màu Text Secondary #757575, không rớt chữ cụt lủn).
 - **Nút CTA chính:** "Khám phá quán ngon / Đặt món ngay" nền cam, chữ trắng in đậm, chiều cao 50dp ($\ge 48\text{dp}$), bo góc 12px.
-- **Widget hỗ trợ chuyển đổi:** Thẻ "Gợi ý ca gom hôm nay" hiển thị Ca Trưa (11:30 – 12:00) đang mở nhận đơn, chốt lúc 10:45, thanh tiến độ cam "Đã gom: 24/30 suất", tag "Freeship Cổng 2", "+21 bạn cùng tòa B3" và liên kết "Xem 18 quán ngon" giúp sinh viên chuyển tiếp ngay sang hành vi đặt món.
+- **Widget hỗ trợ chuyển đổi:** Thẻ "Gợi ý ca gom hôm nay" hiển thị Ca Trưa (11:30 – 12:00), dòng "Đang nhận đơn, chốt lúc 10:45 • Đã gom: 24/30 suất" gọn trên 1 dòng, thanh tiến độ cam, tag "Freeship Cổng 2", "+21 bạn cùng tòa B3" và liên kết "Xem 18 quán ngon" giúp sinh viên chuyển tiếp ngay sang hành vi đặt món.
 
 ### 2.3.2. Trạng Thái Thông Báo Lỗi (Error State)
 
@@ -329,13 +347,14 @@ Trạng thái thông báo lỗi (Error State):
 
 **Điểm nổi bật UI & Công thái học:**
 
-- **Banner cảnh báo đỉnh:** Dải nền đỏ nhạt #FCE8E6, chữ đỏ #D32F2F "Mất kết nối mạng • Dữ liệu chưa cập nhật" với biểu tượng WiFi bị gạch.
+- **Header đồng bộ:** Dùng chung header "Lịch Sử Đơn Hàng" với màn Empty State, để sinh viên hiểu lỗi xảy ra ngay trong tab Lịch sử.
+- **Banner cảnh báo đỉnh:** Dải nền hồng nhạt #FFF1F2, chữ đỏ #E11D48 "Mất kết nối mạng • Dữ liệu chưa cập nhật" với biểu tượng WiFi bị gạch.
 - **Minh họa lỗi (Illustration):** Biểu tượng mất tín hiệu mạng kèm nhãn "Bàn Gom Khu B" và dấu chấm than đỏ.
 - **Nội dung thông điệp:**
   - Tiêu đề lỗi: "Mất kết nối máy chủ" (Heading 2, #111111).
   - Mô tả: "Không thể đồng bộ dữ liệu đơn hàng. Vui lòng kiểm tra lại kết nối WiFi/4G hoặc thử lại." (màu xám trung tính).
 - **Cụm nút hành động kép (Action Cluster):**
-  - Nút chính: "Thử lại kết nối" nền cam đậm #E64A19, chữ trắng in đậm kèm icon làm mới (cao 50dp).
+  - Nút chính: "Thử lại kết nối" nền Primary Orange #FF5722, chữ trắng in đậm kèm icon làm mới (cao 50dp).
   - Nút phụ: "Xem cách nhận hàng offline" dạng viền, nền trắng.
 - **Phương án cứu sinh (Safety Net / Graceful Degradation):** Thẻ "Cần nhận cơm gấp tại cổng KTX?" hướng dẫn "Đọc trực tiếp **4 số cuối SĐT** (chữ cam) cho Điều phối viên trực Bàn gom" kèm nút 1 chạm "Gọi Trực Bàn Gom KTX – 1900 6899 (Miễn cước sinh viên)".
 
@@ -344,7 +363,7 @@ Trạng thái thông báo lỗi (Error State):
 | Trạng thái | Thành phần trực quan | Nội dung thông điệp | Nút hành động CTA | Lý do kỹ thuật / UX |
 |---|---|---|---|---|
 | Trạng thái trống (Empty State) | Hình minh họa hộp cơm giữ nhiệt rỗng tone cam, chip lọc trạng thái (0) | • "Chưa có đơn hàng nào cần nhận"<br>• "Bạn không có đơn giao đến cổng KTX trong khung giờ này. Đặt món ngay để kịp chốt đơn nhé!" | • Chính: Khám phá quán ngon / Đặt món ngay (nền cam, cao $\ge 48\text{dp}$)<br>• Phụ: Card gợi ý ca gom đang mở chốt lúc 10:45 | • Tránh màn hình trắng trơn gây hoang mang.<br>• Biến trạng thái trống thành cơ hội kích cầu (conversion trigger) dẫn dắt sinh viên đặt món trước giờ chốt ca. |
-| Trạng thái lỗi (Error State) | Icon mất kết nối WiFi/Server nền tròn pastel, banner cảnh báo đỉnh nền đỏ nhạt | • "Mất kết nối máy chủ"<br>• "Không thể đồng bộ dữ liệu đơn hàng. Vui lòng kiểm tra lại kết nối WiFi/4G hoặc thử lại." | • Chính: Thử lại kết nối (nền #E64A19, cao $\ge 48\text{dp}$)<br>• Phụ: Xem cách nhận hàng offline + Nút gọi Bàn Gom trực tiếp | • Giảm cảm giác ức chế (anxiety) khi đang đứng đợi cơm ở cổng KTX mà mất sóng.<br>• Cung cấp lối thoát thực tế (đọc 4 số cuối SĐT / gọi hotline) theo nguyên lý Graceful Degradation. |
+| Trạng thái lỗi (Error State) | Icon mất kết nối WiFi/Server nền tròn pastel, banner cảnh báo đỉnh nền đỏ nhạt | • "Mất kết nối máy chủ"<br>• "Không thể đồng bộ dữ liệu đơn hàng. Vui lòng kiểm tra lại kết nối WiFi/4G hoặc thử lại." | • Chính: Thử lại kết nối (nền #FF5722, cao $\ge 48\text{dp}$)<br>• Phụ: Xem cách nhận hàng offline + Nút gọi Bàn Gom trực tiếp | • Giảm cảm giác ức chế (anxiety) khi đang đứng đợi cơm ở cổng KTX mà mất sóng.<br>• Cung cấp lối thoát thực tế (đọc 4 số cuối SĐT / gọi hotline) theo nguyên lý Graceful Degradation. |
 
 ## 2.5. Đánh giá phản biện AI (AI Critique - 5 Phát hiện cụ thể)
 
@@ -365,7 +384,7 @@ Trạng thái thông báo lỗi (Error State):
 - **Đối với Phát hiện 4 (Nghẽn mạng giờ cao điểm tại KTX): [Tinh chỉnh]**
   Lý do kỹ thuật: Đề xuất lưu cục bộ (Local Storage / Cache) mã đơn #8829B và 4 số cuối SĐT ngay khi đặt hàng thành công. Khi rơi vào Error State, hệ thống vẫn hiển thị được các thông tin cơ bản này để đối soát mà không cần tải lại toàn bộ trang.
 - **Đối với Phát hiện 5 (Độ tương phản và phân cấp màu sắc): [Chấp nhận]**
-  Lý do kỹ thuật: Tiêu đề dùng Text Primary #111111 (tương phản khoảng 18.9:1 trên nền trắng), mô tả dùng Text Secondary #757575 (khoảng 4.6:1, đạt AA). Banner lỗi dùng chữ đỏ #D32F2F trên nền đỏ nhạt #FCE8E6, đo được khoảng 4.2:1, **chưa đạt 4.5:1** cho chữ thường; điểm này được ghi lại để xử lý ở mục 4.
+  Lý do kỹ thuật: Tiêu đề dùng Text Primary #111111 (tương phản khoảng 18.9:1 trên nền trắng), mô tả dùng Text Secondary #757575 (khoảng 4.6:1, đạt AA). Banner lỗi dùng chữ đỏ #E11D48 trên nền hồng nhạt #FFF1F2, đo được khoảng 4.3:1, **chưa đạt 4.5:1** cho chữ thường; điểm này được ghi lại để xử lý ở mục 5.
 
 ---
 
@@ -413,6 +432,7 @@ Nút hành động chính (Primary Action CTA):
 
 ### 3.3.1. Chuẩn hóa Touch Target tối thiểu $48\times 48\text{dp}$
 
+- **Header chức năng:** Nút quay lại hình tròn $48\times 48\text{dp}$, tiêu đề "Theo Dõi Đơn & Mã Nhận" căn giữa, avatar bên phải, cùng mẫu với các màn chức năng ở Vòng 1.
 - **Nút Back & Nút Gọi Shipper:** Các icon vector ($20–24\text{dp}$) được bọc trong vùng chứa tương tác tối thiểu $48\times 48\text{dp}$ (`w-12 h-12 flex items-center justify-center`); nút gọi shipper là nút tròn viền nhạt, icon điện thoại xanh lá.
 - **Phím tiện ích "Sáng max":** Ở `v3_before.png` chỉ là nhãn nhỏ nền vàng đè lên góc khung QR; ở `v3_after.png` được phóng to thành nút quick-action nền cam #FF5722 chữ trắng có icon mặt trời, cho phép sinh viên kích hoạt nhanh bằng một chạm ngón cái khi đứng nhận cơm dưới trời nắng gắt.
 - **Cụm nút phụ ("Theo dõi đơn" & "Khiếu nại / Báo sự cố"):** Chiều cao nâng lên $48\text{dp}$, cùng dạng viền; nút "Khiếu nại / Báo sự cố" dùng viền và icon cảnh báo tông đỏ để phân biệt với hành động trung tính "Theo dõi đơn".
@@ -421,6 +441,7 @@ Nút hành động chính (Primary Action CTA):
 
 - **Kích thước khung QR:** Khung chứa đạt $200\times 200\text{dp}$ với vùng đệm an toàn (Quiet Zone) $20\text{dp}$ xung quanh mã (viền nét đứt), giúp camera shipper bắt nét nhanh.
 - **Tương phản quang học tuyệt đối:** Mã QR đen #000000 trên nền trắng #FFFFFF đạt tỷ lệ tương phản $21:1$; ô giữa mã giữ điểm nhấn cam thương hiệu.
+- **Banner thanh toán 1 dòng:** "ĐÃ THANH TOÁN (VIETQR) • KHÔNG THU TIỀN" nằm trọn 1 dòng (bản trước bị cắt chữ "TIỀN" ở mép phải).
 - **Mã đối soát PIN 4 số lớn:** Dãy "4 8 2 9" tách từng chữ số, cỡ Bold $26\text{sp}$, chữ cam #FF5722 trong khung viền cam trên nền trắng, giúp sinh viên đọc to hoặc shipper nhập tay khi camera mờ/trời tối.
 - **Mã định danh đơn:** Nhãn "KTX - ORDER - 8829B" dưới QR được giãn ký tự để đọc lướt nhanh.
 
@@ -464,24 +485,55 @@ Nút hành động chính (Primary Action CTA):
 
 ---
 
-# 4. HẬU KIỂM ĐỐI CHIẾU DESIGN SYSTEM & ĐỘ TƯƠNG PHẢN (SAU 3 VÒNG)
+# 4. TINH CHỈNH HOÀN THIỆN BẢN CHỐT (SAU 3 VÒNG)
 
-Sau khi đồng bộ màu và chữ theo `design1.png` / `design2.png`, nhóm đo lại màu thực tế trong các ảnh bản chốt và tính tỷ lệ tương phản theo công thức WCAG 2.1:
+Sau 3 vòng, toàn bộ ảnh `v1_after-1/2/3.png`, `v2_after.png`, `v3_after.png` được rà lại một lượt với 3 mục tiêu: lược bớt chữ, sửa lỗi xuống dòng và đồng bộ header. Các bảng dưới so sánh bản chốt trước và sau đợt rà này.
+
+## 4.1. Lược bớt chữ cho gọn, đỡ rối mắt
+
+| Màn | Trước | Sau |
+| :--- | :--- | :--- |
+| Trang chủ (Màn 1) | Lời chào 2 dòng "Chào Linh! Hôm nay bạn muốn ăn gì?"; tên quán dài | "Chào Linh! Trưa nay ăn gì?"; tên quán rút gọn ("Bún Đậu Mắm Tôm Cô Bông KTX", "Trà Sữa Đậm Vị KTX Khu B") |
+| Chi tiết quán (Màn 2) | Mỗi món có đoạn mô tả 2–3 dòng | Chỉ giữ ảnh, tên món và giá |
+| Theo dõi đơn (Màn 6) | Nhãn bản đồ "Đường Tạ Quang Bửu", "trong đợt phát trưa" | "Đ. Tạ Quang Bửu", "đợt trưa" |
+| Mã nhận (Màn 7) | Tiêu đề "Theo Dõi Đơn & Mã Nhận", nút "Khiếu nại / Báo sự cố" | Tiêu đề "Mã Nhận Đồ Ăn", nút "Báo sự cố" |
+| Khiếu nại (Màn 8) | Lý do sự cố dài ("Thiếu món hoặc thiếu topping", "Không bàn giao / Giao nhầm đơn"); nút "Gửi Yêu Cầu Khiếu Nại & Hoàn Tiền" | "Thiếu món / thiếu đồ", "Giao nhầm đơn / Không nhận được"; nút "Gửi Yêu Cầu Hoàn Tiền (10.000đ)" |
+| Lịch sử (Màn 10) | Header có thêm dòng phụ đề mô tả | Bỏ phụ đề, chỉ giữ tiêu đề |
+
+## 4.2. Sửa lỗi xuống dòng
+
+| Màn | Lỗi trước | Sau khi sửa |
+| :--- | :--- | :--- |
+| Trang chủ (Màn 1) | Lời chào rớt xuống dòng thứ 2 | Nằm trọn 1 dòng |
+| Empty State (Vòng 2) | Tab "Đang diễn ra (0)" tách 2 dòng; "Đang mở nhận đơn, chốt lúc 10:45" tách 2 dòng | Tab dạng segmented nằm trọn 1 hàng; "Đang nhận đơn, chốt lúc 10:45 • Đã gom: 24/30 suất" trên 1 dòng |
+
+## 4.3. Đồng bộ header
+
+| Màn | Trước | Sau |
+| :--- | :--- | :--- |
+| Theo dõi đơn, Mã nhận, Khiếu nại, Đánh giá, Lịch sử, Vòng 3 | Header trái kèm icon thương hiệu, có màn thêm phụ đề | Mẫu "màn chức năng": nút quay lại hình tròn · tiêu đề căn giữa · avatar |
+| Empty State & Error State (Vòng 2) | Header thương hiệu "KTX KHU B – Lịch sử đơn hàng" | Dùng chung header "Lịch Sử Đơn Hàng" như màn Lịch sử có đơn |
+| Chi tiết quán (Màn 2) | Header riêng "Chi Tiết Quán & Thực Đơn" | Dùng chung header "GIAO ĐẾN" với Trang chủ |
+
+---
+
+# 5. HẬU KIỂM ĐỐI CHIẾU DESIGN SYSTEM & ĐỘ TƯƠNG PHẢN
+
+Màu thực tế được đo trực tiếp trên các ảnh bản chốt và tính tỷ lệ tương phản theo công thức WCAG 2.1:
 
 | Cặp màu (chữ / nền) | Vị trí trong bản chốt | Tỷ lệ | Đánh giá |
 | :--- | :--- | :---: | :--- |
 | #111111 / #FFFFFF | Tiêu đề, giá tiền | ≈ 18.9:1 | ✅ Đạt AAA |
 | #757575 / #FFFFFF | Mô tả, chú thích | ≈ 4.6:1 | ✅ Đạt AA |
-| #FFFFFF / #FF5722 | Nhãn nút chính ở Vòng 1 và Vòng 3 | ≈ 3.2:1 | ⚠️ Đạt AA cho **chữ lớn** (≥ 18.66px Bold) và cho thành phần giao diện (≥ 3:1); **chưa đạt 4.5:1** cho chữ thường |
-| #FFFFFF / #E64A19 | Nhãn nút ở Vòng 2 (Thử lại kết nối, Đặt món ngay) | ≈ 3.9:1 | ⚠️ Như trên |
+| #FFFFFF / #FF5722 | Nhãn nút chính ở cả 3 vòng | ≈ 3.2:1 | ⚠️ Đạt AA cho **chữ lớn** (≥ 18.66px Bold) và cho thành phần giao diện (≥ 3:1); **chưa đạt 4.5:1** cho chữ thường |
 | #FF5722 / #FFFFFF | Chữ cam (mã PIN, liên kết "Xem 18 quán ngon") | ≈ 3.2:1 | ✅ Mã PIN 26sp Bold đạt; ⚠️ liên kết cỡ nhỏ chưa đạt |
-| #D32F2F / #FCE8E6 | Chữ banner "Mất kết nối mạng" | ≈ 4.2:1 | ⚠️ Gần đạt, thiếu so với 4.5:1 |
+| #E11D48 / #FFF1F2 | Chữ banner "Mất kết nối mạng" | ≈ 4.3:1 | ⚠️ Gần đạt, thiếu so với 4.5:1 |
 
 **Quyết định khi bàn giao Flutter:**
 1. **Giữ** Primary Orange #FF5722 làm màu nền nút chính để thống nhất nhận diện với Design System của cả nhóm.
 2. Nhãn chữ trắng trên nút cam bắt buộc dùng **Inter Bold ≥ 19px** để thuộc nhóm "chữ lớn" của WCAG (ngưỡng 3:1).
 3. Chữ cam #FF5722 chỉ dùng cho chữ lớn, icon hoặc viền; liên kết và nhãn nhỏ (14–16px) chuyển sang #111111 kèm gạch chân hoặc icon mũi tên cam.
-4. Banner lỗi tăng độ đậm chữ đỏ (tối hơn #D32F2F) để đạt ≥ 4.5:1 trên nền #FCE8E6. Error Red #F44336 của Design System chỉ dùng cho icon và viền, không dùng cho chữ nhỏ trên nền trắng (≈ 3.7:1).
+4. Banner lỗi tăng độ đậm chữ đỏ (tối hơn #E11D48) để đạt ≥ 4.5:1 trên nền #FFF1F2. Error Red #F44336 của Design System chỉ dùng cho icon và viền, không dùng cho chữ nhỏ trên nền trắng (≈ 3.7:1).
 5. Các khoảng cách lẻ do AI sinh ra (12dp, 14dp) được làm tròn về token 8 / 16 / 24dp.
 
 ---
